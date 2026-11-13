@@ -28,6 +28,8 @@ export function methodNames(p: Entry) {
 export function blank() {
   return {
     kind: "assessment",
+    activity: "",
+    projectRole: "",
     regionalModel: "Bölgesel model",
     lineSources: Array.from({ length: 2 }, () => Array<string>(5).fill("")),
     deliveryCost: "",
@@ -163,6 +165,8 @@ export function isEntry(x: unknown): x is Entry {
   const p = x as Entry;
   const short = (v: unknown) => typeof v === "string" && v.length <= 2000;
   const optional = [
+    "activity",
+    "projectRole",
     "regionalModel",
     "approach",
     "decider",
@@ -191,6 +195,7 @@ export function isEntry(x: unknown): x is Entry {
   return (
     (p.kind === undefined || p.kind === "intake" || p.kind === "assessment") &&
     validSources &&
+    (p.kind !== "intake" || !p.deadline || /^\d{4}-\d{2}-\d{2}$/.test(p.deadline)) &&
     (p.deliveryCost === undefined ||
       (short(p.deliveryCost) &&
         (p.deliveryCost === "" || valid(p.deliveryCost)))) &&

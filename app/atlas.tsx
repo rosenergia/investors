@@ -15,6 +15,7 @@ import {
 import { photograph, sectorsInPrint } from "../lib/editorial";
 import { SloveniaBrief } from "./slovenia-brief";
 import { MarketExplorer } from "./markets";
+import { profiles } from "../lib/discovery";
 import { growth } from "../lib/growth";
 type Route = "sector" | "home" | "guide" | "desk" | "map" | "intake";
 export function Logo() {
@@ -78,7 +79,7 @@ export function Header({
       s.name,
       growth[s.id].headline,
       ...(category === 1
-        ? s.questions
+        ? [profiles[s.id].name, ...profiles[s.id].activities.map(([name])=>name), ...s.questions]
         : growth[s.id].chapters.flatMap((c) => [...c.theme, c.title])),
     ]
       .join(" ")
@@ -201,7 +202,7 @@ export function Header({
                             ]
                           }
                         </small>
-                        <strong>{category === 2 ? s.pilot : s.name}</strong>
+                        <strong>{category === 2 ? s.pilot : category === 1 ? profiles[s.id].name : s.name}</strong>
                       </span>
                       <ChevronRight size={16} />
                     </button>

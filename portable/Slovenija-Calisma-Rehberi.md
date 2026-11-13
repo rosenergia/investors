@@ -84,3 +84,189 @@ Türkiye’de üretim ve ihracat yapan bir sanayiciyle çalışan ticari iş gel
 6. İlk tesiste hangi sonucu, hangi sayaç veya kabul tutanağıyla ve hangi tarihte gösterebilirsiniz?
 
 İlk saha çalışması — Tek tesiste öz tüketim ve yerel servis teklifi.
+
+## Müşteriyi tanıma ve takip
+
+İlk görüşme. Son tamamlanan veya kaybedilen işi seçin. Ürünü, ülkeyi, alıcı tipini ve firmanın bu işteki rolünü sorun.
+
+Etkisini ölçün. Nerede aksadı? Kaç gün, ton, palet veya sipariş etkilendi? Rakamın ölçüm mü tahmin mi olduğunu ve hangi dönemi kapsadığını kaydedin.
+
+Kararı doğrulayın. Teknik kabulü, bütçeyi ve ödemeyi kim onaylıyor? Bir sonraki görüşmeye hangi rolün katılması gerektiğini belirleyin.
+
+Takibi kapatın. Tek bir sonraki iş, sorumlu, tarih ve kabul ölçütü belirleyin. Tarih geldiğinde belge geldiyse pilotu planlayın. Eksikse beklenen bilgiyi ve yeni tarihi çalışma masasına yazın.
+
+### İnşaat ve renovasyon
+
+Yapısal çelik ve konstrüksiyon
+
+Son projede hangi çizim revizyonu tonajı veya montaj sırasını değiştirdi? Farkı kim onayladı?
+
+İstenecek kayıt: Onaylı metraj ile son revizyon arasındaki fark ve gerçekleşen ekip-gün.
+
+Renovasyon ve güçlendirme
+
+Son yenilemede sökümden sonra hangi beklenmedik iş çıktı? İşveren ek kapsamı nasıl onayladı?
+
+İstenecek kayıt: Keşif özeti, değişiklik onayı ve kullanıma kapalı kalınan gün.
+
+Anahtar teslim inşaat ve EPC
+
+Mühendislik, satın alma ve yapım paketlerinin sınırında kalan son iş neydi? Süre ve bütçeyi kim üstlendi?
+
+İstenecek kayıt: Paket sınırları, sorumluluk çizelgesi ve kabul takvimi.
+
+Genel taahhüt ve alt yüklenici işleri
+
+Son ihalede paketi kim tanımladı, alt yükleniciyi kim seçti ve hakedişi kim imzaladı?
+
+İstenecek kayıt: Teklif kapsamı, ihale takvimi ve hakediş onay zinciri.
+
+### Enerji
+
+Güneş enerjisi
+
+Son güneş projesinde üretim ile tüketimin aynı saatlere denk geldiğini hangi veriden gördünüz?
+
+İstenecek kayıt: Saatlik tüketim, üretim tahmini ve bağlantı görüşü.
+
+Rüzgâr enerjisi
+
+Son projede türbin teslimi, saha erişimi veya kaldırma takviminden hangisi devreye almayı belirledi?
+
+İstenecek kayıt: Saha programı, teslim penceresi ve kabul tarihi.
+
+Doğalgaz ve kombine çevrim
+
+Son santral işinde hangi yük koşulunda hangi performans taahhüdünü verdiniz? Kabulü kim yaptı?
+
+İstenecek kayıt: Yük profili, performans testi kapsamı ve bakım duruşu.
+
+Jeotermal enerji ve çevrim santralleri
+
+Son fizibilitede hangi kuyu verisi net üretim tahminini değiştirdi? Bu varsayımı kim doğrulayacak?
+
+İstenecek kayıt: Debi ve sıcaklık ölçüm dönemi, net üretim hesabı ve ölçüm sahibi.
+
+Diğer yenilenebilir enerji ve depolama
+
+Son projede hangi kaynağı veya depolama sistemini hangi tüketim ihtiyacıyla eşleştirdiniz?
+
+İstenecek kayıt: Kaynak profili, kullanım süresi ve sayaçla ölçülecek sonuç.
+
+### Gıda ve soğuk zincir
+
+Taze meyve ve sebze
+
+Son yükte ürün hangi noktada sınıf kaybetti? Alıcı kaç kasayı hangi gerekçeyle reddetti?
+
+İstenecek kayıt: Hasat ve teslim saatleri, kabul kaydı ve satılabilir kasa sayısı.
+
+Et, süt ve su ürünleri
+
+Son partide hangi sıcaklık veya kalan raf ömrü şartı kabulü etkiledi?
+
+İstenecek kayıt: Parti sıcaklık kaydı, teslim saati ve kalan raf ömrü.
+
+Dondurulmuş ve işlenmiş gıda
+
+Son sevkte sıcaklık sapması veya hasarlı ambalaj hangi partiyi etkiledi? Ayırma giderini kim üstlendi?
+
+İstenecek kayıt: Parti ve ambalaj kaydı, reddedilen miktar ve iskonto.
+
+Soğuk depolama ve soğutmalı taşıma
+
+Son taşımada yük hangi devir noktasında bekledi? Sıcaklığı ve sorumluluk devrini nasıl kaydettiniz?
+
+İstenecek kayıt: Depo çıkış saati, araç kaydı ve imzalı teslim fişi.
+
+### Endüstri
+
+Demir ve çelik üretimi
+
+Son partide hangi kalite sınıfı, tolerans veya teslim koşulu alıcının kabulünü değiştirdi?
+
+İstenecek kayıt: Parti sertifikası, kabul edilen ton ve yeniden işleme gideri.
+
+Alüminyum ve ekstrüzyon
+
+Son profilde alaşım, kalıp veya yüzey şartından hangisi fireyi ya da ilk numune süresini artırdı?
+
+İstenecek kayıt: Numune onayı, kalıp süresi ve kullanılır profil başına maliyet.
+
+Döküm ve metal işleme
+
+Son seride hangi ölçü toleransı tekrar işlem gerektirdi? Kabul numunesini kim onayladı?
+
+İstenecek kayıt: Ölçüm raporu, yeniden işlenen adet ve çevrim süresi.
+
+Makine ve endüstriyel otomasyon
+
+Son hat kurulumunda hangi kapasite veya duruş koşulu saha kabulünü geciktirdi?
+
+İstenecek kayıt: Kabul protokolü, gerçekleşen çevrim süresi ve servis kaydı.
+
+### İklim değişikliği ve iklimlendirme
+
+HVAC ve bina iklimlendirmesi
+
+Son tesiste hangi çalışma saatinde konfor veya hava kalitesi hedefi sağlanamadı?
+
+İstenecek kayıt: Zon ölçümü, kullanım saatleri ve kabul aralığı.
+
+Isı pompaları ve ısı geri kazanımı
+
+Son tesiste hangi dış sıcaklıkta hangi ısı ihtiyacını karşıladınız? Ek ısıtma ne zaman devreye girdi?
+
+İstenecek kayıt: Yük ve sıcaklık profili ile aynı dönemin sayaç değerleri.
+
+Enerji verimliliği ve emisyon azaltımı
+
+Son projede tasarrufu hangi başlangıç dönemiyle karşılaştırdınız? Üretim veya hava koşullarındaki farkı nasıl ayırdınız?
+
+İstenecek kayıt: Başlangıç sayacı, işletme koşulları ve karşılaştırma dönemi.
+
+İklim risklerine uyum
+
+Son sıcak hava, taşkın veya su kısıtı hangi faaliyeti kaç saat durdurdu? En hassas tesisi kim belirledi?
+
+İstenecek kayıt: Olay kaydı, kaybedilen çalışma saati ve öncelikli tesis.
+
+### Tekstil ve hazır giyim
+
+Hazır giyim ve özel marka
+
+Son tekrar siparişinde hangi renk veya beden teslim tarihini değiştirdi?
+
+İstenecek kayıt: Beden dağılımı, tekrar sipariş tarihi ve teslim süresi.
+
+Teknik tekstil ve iş kıyafeti
+
+Son numunede alıcının işlev veya dayanım şartını kim onayladı?
+
+İstenecek kayıt: Numune kabul ölçütü ve yeniden sipariş planı.
+
+Kumaş, iplik ve ev tekstili
+
+Son partide ton farkı, minimum miktar veya termin hangi siparişi etkiledi?
+
+İstenecek kayıt: Parti onayı, metraj ve teslim kaydı.
+
+### Firmanın rolü
+
+İşveren / yatırımcı — Son bütçe kararında kim imza attı ve işe başlama kararını hangi bilgi belirledi?
+
+Ana yüklenici — Hangi işleri alt yükleniciye verdiniz? İşverene karşı kabul ve gecikme sorumluluğu kimde kaldı?
+
+EPC yüklenicisi — Tasarım onayı, satın alma, yapım ve performans garantisini kim üstlendi? Açıkta kalan bir iş paketini tarif eder misiniz?
+
+Alt yüklenici / montaj firması — Sahaya giriş, diğer ekiplerle koordinasyon ve hakediş onayı kimin sorumluluğundaydı?
+
+Üretici / ekipman tedarikçisi — Son teslimde ürünün uygunluğunu kim kabul etti? Montaj ve garantiye hangi noktada devredildi?
+
+İşletmeci / servis sağlayıcı — Son arızada müdahale süresi, yedek parça ve üretim kaybını hangi taraf üstlendi?
+
+Dağıtıcı / lojistik ortağı — Son siparişte stok, taşıma ve iadeyi kim yönetti? Teslimde hangi kayıt sorumluluğu devretti?
+
+Tasarımcı / danışman — Şartnameyi kim hazırladı, revizyonu kim onayladı ve işverene hangi teslimatı yaptınız?
+
+Diğer / birden fazla rol — Son işte üstlendiğiniz işleri ve diğer taraflara devrettiğiniz sorumlulukları nasıl ayırdınız?

@@ -12,9 +12,14 @@ import { blank, isEntry, type Entry } from "../lib/assessment";
 import { sectors } from "../lib/content";
 import { photograph } from "../lib/editorial";
 
+import { activityOf, profiles, projectRoles, interviewQuestions } from "../lib/discovery";
+
 const issueGroups: Record<string, { options: string[]; example: string }> = {
   celik: {
     options: [
+      "Keşif, renovasyon ve kapsam değişikliği",
+      "EPC paket sınırları ve sorumluluk",
+      "Ana yükleniciye erişim ve ön yeterlik",
       "Çizim ve metraj revizyonu",
       "Çelik fiyatı ve teklif süresi",
       "Nakliye, vinç ve montaj",
@@ -37,6 +42,8 @@ const issueGroups: Record<string, { options: string[]; example: string }> = {
   },
   hvac: {
     options: [
+      "İklim riskine bağlı duruş",
+      "Tasarruf ve emisyon ölçümü",
       "Şartnameye giriş",
       "Saha performansı ve kabul",
       "Devreye alma",
@@ -59,6 +66,8 @@ const issueGroups: Record<string, { options: string[]; example: string }> = {
   },
   makine: {
     options: [
+      "Parti kalitesi ve tolerans",
+      "Hammadde, fire ve enerji maliyeti",
       "Hat entegrasyonu",
       "Kapasite ve kabul testi",
       "Devreye alma süresi",
@@ -108,6 +117,7 @@ const fields = [
 ] as const;
 type InputKey = (typeof fields)[number];
 type Props = {
+  initialProfile?: {sector:string; activity:string; projectRole:string};
   invite: string;
   offline: boolean;
   save: (id: string, p: Entry) => Promise<void>;
@@ -148,6 +158,9 @@ function loadDraft(invite: string, key: string): Draft {
     )
       return draft;
     for (const k of fields) draft.entry[k] = e[k];
+    for (const k of ["activity", "projectRole", "proof", "owner", "deadline", "approach"] as const) {
+      if (typeof e[k] === "string" && e[k].length <= 2000) draft.entry[k] = e[k];
+    }
     draft.entry.answers = e.answers;
     draft.id = stored.id;
     const sector = sectors.find((s) => s.id === e.sector);
@@ -196,14 +209,19 @@ function download(d: Draft) {
 }
 export function IntakeSummary({ p }: { p: Entry }) {
   const sector = sectors.find((s) => s.id === p.sector);
+  const activity = activityOf(p.sector, p.activity);
+  const questions = activity ? interviewQuestions(activity, p.projectRole) : sector?.questions;
   const rows = [
-    ["Sektör", sector?.name],
+    ["Sektör", activity ? profiles[p.sector].name : sector?.name],
+    ["Faaliyet alanı", p.activity], ["Firmanın proje rolü", p.projectRole],
     ["Hedef pazar", p.market],
     ["Öncelikli konu", p.offer],
     ["Yaşanan sorun", p.barrier],
     ["İşletmeye etkisi", p.reason],
     ["Beklenen sonuç", p.success],
-    ...(sector?.questions.map((q, i) => [q, p.answers[i]]) || []),
+    ...(questions?.map((q, i) => [q, p.answers[i]]) || []),
+    ["İzlenecek iş", p.approach], ["Beklenen kanıt", p.proof],
+    ["Takip sorumlusu", p.owner], ["Takip tarihi", p.deadline],
     ["Firma", p.firm],
     ["Görüşülecek kişi / görev", p.role],
     ["İletişim", p.contact],
@@ -227,7 +245,7 @@ export function IntakeSummary({ p }: { p: Entry }) {
 export function Intake(props: Props) {
   return <IntakeForm key={props.invite} {...props} />;
 }
-function IntakeForm({ invite, offline, save }: Props) {
+function IntakeForm({ invite, offline, save, initialProfile }: Props) {
   const key = "avrupa-firma-basvurusu:" + invite;
   const [draft, setDraft] = useState<Draft>(() => fresh(invite));
   const [ready, setReady] = useState(false);
@@ -240,10 +258,18 @@ function IntakeForm({ invite, offline, save }: Props) {
   const { entry: p, step } = draft;
   const sector = sectors.find((s) => s.id === p.sector);
   const group = issueGroups[p.sector];
+  const activity = activityOf(p.sector, p.activity);
+  const questions = activity ? interviewQuestions(activity, p.projectRole) : sector?.questions || [];
   useEffect(() => {
-    setDraft(loadDraft(invite, key));
+    const loaded = loadDraft(invite, key);
+    if (!loaded.entry.sector && initialProfile) {
+      const selected = sectors.find(s => s.id === initialProfile.sector);
+      if (selected) Object.assign(loaded.entry, initialProfile, {unit:selected.unit,
+        mode:["celik","hvac","makine","enerji"].includes(selected.id) ? "Proje" : "Ürün"});
+    }
+    setDraft(loaded);
     setReady(true);
-  }, [invite, key]);
+  }, [invite, key, initialProfile]);
   useEffect(() => {
     if (!ready || done) return;
     try {
@@ -264,6 +290,7 @@ function IntakeForm({ invite, offline, save }: Props) {
       entry: {
         ...d.entry,
         sector: id,
+        activity: "", projectRole: "", proof:"", owner:"", deadline:"", approach:"",
         unit: s.unit,
         mode: ["celik", "hvac", "makine", "enerji"].includes(id)
           ? "Proje"
@@ -276,7 +303,15 @@ function IntakeForm({ invite, offline, save }: Props) {
       },
     }));
   }
-  function change(k: InputKey, v: string) {
+  function chooseProfile(field: "activity" | "projectRole", value: string) {
+    setDraft(d => {
+      const answers = [...d.entry.answers];
+      if (!d.entry.activity) answers.fill("");
+      else answers[field === "activity" ? 0 : 1] = "";
+      return {...d, entry:{...d.entry, [field]:value, answers}};
+    });
+  }
+  function change(k: InputKey | "proof" | "owner" | "deadline" | "approach", v: string) {
     setError("");
     setDraft((d) => ({ ...d, entry: { ...d.entry, [k]: v } }));
   }
@@ -440,7 +475,7 @@ function IntakeForm({ invite, offline, save }: Props) {
         <div className="intake-step-heading">
           <p className="intake-label">
             {sector && step > 0
-              ? sector.name.toLocaleUpperCase("tr")
+              ? profiles[sector.id].name.toLocaleUpperCase("tr")
               : "SEKTÖR SEÇİMİ"}
           </p>
           <h2 tabIndex={-1} ref={stepHeading}>
@@ -454,6 +489,7 @@ function IntakeForm({ invite, offline, save }: Props) {
           </h2>
         </div>
         {step === 0 && (
+          <>
           <fieldset className="intake-sectors">
             <legend className="intake-sr">Sektör seçin</legend>
             {sectors.map((s) => (
@@ -468,8 +504,8 @@ function IntakeForm({ invite, offline, save }: Props) {
                 />
                 <img alt="" src={photograph(s.id)} />
                 <span>
-                  <strong>{s.name}</strong>
-                  <small>{s.focus}</small>
+                  <strong>{profiles[s.id].name}</strong>
+                  <small>{profiles[s.id].activities.map(([name]) => name).join(" · ")}</small>
                 </span>
                 <span className="intake-radio" aria-hidden="true">
                   {p.sector === s.id && <Check size={13} />}
@@ -477,6 +513,17 @@ function IntakeForm({ invite, offline, save }: Props) {
               </label>
             ))}
           </fieldset>
+          {sector && <div className="intake-fields-grid">
+            <label className="intake-field"><span>Faaliyet alanınız *</span>
+              <select required name="activity" value={p.activity} onChange={e=>chooseProfile("activity",e.target.value)}>
+                <option value="">Faaliyet seçin</option>
+                {profiles[sector.id].activities.map(([name])=><option key={name}>{name}</option>)}
+              </select></label>
+            <label className="intake-field"><span>Son işte firmanızın rolü *</span>
+              <select required name="projectRole" value={p.projectRole} onChange={e=>chooseProfile("projectRole",e.target.value)}>
+                <option value="">Rol seçin</option>{Object.keys(projectRoles).map(r=><option key={r}>{r}</option>)}
+              </select></label>
+          </div>}</>
         )}
         {step === 1 && sector && (
           <>
@@ -497,7 +544,7 @@ function IntakeForm({ invite, offline, save }: Props) {
             {textArea(
               "barrier",
               "Yaşadığınız sorunu anlatın",
-              group?.example || "Son işinizden bir örnek verin.",
+              activity ? "İşin kapsamını ve sorunun ilk görüldüğü aşamayı belirtin." : group?.example || "Son işinizden bir örnek verin.",
             )}
             {textArea(
               "reason",
@@ -515,12 +562,12 @@ function IntakeForm({ invite, offline, save }: Props) {
                 Bilgi verebildiğiniz soruları yanıtlayın. Bu bölüm isteğe
                 bağlıdır.
               </p>
-              {sector.questions.slice(0, 2).map(question)}
+              {questions.slice(0, 2).map(question)}
               <details>
                 <summary>
                   Diğer sektör soruları <ChevronDown size={15} />
                 </summary>
-                {sector.questions.slice(2).map((q, i) => question(q, i + 2))}
+                {questions.slice(2).map((q, i) => question(q, i + 2))}
               </details>
             </div>
           </>
@@ -575,6 +622,13 @@ function IntakeForm({ invite, offline, save }: Props) {
                   ))}
                 </datalist>
               </label>
+            </div>
+            <h3>Görüşme sonrası takip</h3>
+            <p>Bir sonraki adımı henüz kararlaştırmadıysanız bu alanları görüşmede tamamlayabilirsiniz.</p>
+            <div className="intake-fields-grid">
+              {([["approach","Sonraki iş"],["proof","Beklenen belge veya ölçüm"],["owner","Takip sorumlusu"],["deadline","Hedef tarih"]] as const).map(([k,label]) =>
+                <label key={k} className="intake-field"><span>{label}</span>
+                <input type={k === "deadline" ? "date" : "text"} value={p[k]} maxLength={2000} onChange={e=>change(k,e.target.value)} /></label>)}
             </div>
             <p className="intake-share-note">
               {offline

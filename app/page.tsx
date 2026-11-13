@@ -14,6 +14,8 @@ import {
 } from "../lib/assessment";
 import { SectorDevelopment } from "./sector-development";
 import { RelationshipMap } from "./relationship-map";
+import { discoveryGuide } from "../lib/discovery";
+import { Discovery } from "./discovery";
 import { Intake, IntakeSummary } from "./intake";
 import { Header, Home, FileChooser, Logo } from "./atlas";
 import { BriefFields, BriefReport, PilotFields } from "./project-brief";
@@ -276,6 +278,7 @@ export default function Page() {
     [filter, setFilter] = useState(""),
     [chosen, setChosen] = useState("tekstil"),
     [rule, setRule] = useState(false);
+  const [initialProfile, setInitialProfile] = useState<{sector:string; activity:string; projectRole:string}>();
   const rowNames = methodNames(p);
   const [pendingMode, setPendingMode] = useState("");
   const sector = sectors.find((s) => s.id === p.sector)!,
@@ -625,6 +628,7 @@ export default function Page() {
         {view === "intake" && ready && (
           <Intake
             key={invite}
+            initialProfile={initialProfile}
             invite={invite}
             offline={offline}
             save={saveIntake}
@@ -957,7 +961,7 @@ export default function Page() {
                     ? "data:text/markdown;charset=utf-8," +
                       encodeURIComponent(
                         [
-                          guide,
+                          guide, discoveryGuide(),
                           "## Ortak sorular",
                           ...common,
                           ...sectors.flatMap((s) => [
@@ -988,61 +992,11 @@ export default function Page() {
               </article>
             ) : (
               <>
-                <section className="paper">
-                  <h2>Her firmaya sorulacak 6 soru</h2>
-                  <ol>
-                    {common.map((q) => (
-                      <li key={q}>{q}</li>
-                    ))}
-                  </ol>
-                </section>
-                <section className="paper">
-                  <label className="field">
-                    <span>Sektör seçin</span>
-                    <select
-                      value={chosen}
-                      onChange={(e) => openGuide(e.target.value)}
-                    >
-                      {sectors.map((s) => (
-                        <option value={s.id} key={s.id}>
-                          {s.name}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                  <h2>{selected.name}</h2>
-                  <p>
-                    {selected.focus} üzerine ilk temasta kullanılacak sorular.
-                  </p>
-                  <div className="decision">
-                    <small>İLK TEMAS MESAJI</small>
-                    <p>
-                      {selected.name} alanındaki tek bir ürün veya proje için
-                      mevcut teslim koşullarınızı hedef pazardaki bir dağıtım
-                      veya servis ortağıyla çalışma seçeneğiyle karşılaştırmak
-                      istiyoruz. İlk görüşmede aşağıdaki üç konuyu birlikte
-                      netleştirebilir miyiz?
-                    </p>
-                    <ol>
-                      {atlas
-                        .find((s) => s.id === chosen)!
-                        .questionIndices.map((i) => (
-                          <li key={i}>{selected.questions[i]}</li>
-                        ))}
-                    </ol>
-                    <strong>Talep edilecek bilgi</strong>
-                    <p>{selected.next}</p>
-                  </div>
-                  <h3>Sektör soru bankası</h3>
-                  <ol>
-                    {selected.questions.map((q) => (
-                      <li key={q}>{q}</li>
-                    ))}
-                  </ol>
-                  <div className="decision">
-                    <small>İLK FİRMA GÖRÜŞMESİ</small>
-                    <p>{selected.pilot}</p>
-                  </div>
+                <Discovery key={chosen} sector={chosen} selectSector={openGuide} apply={(sector,activity,projectRole)=>{
+                  setInitialProfile({sector,activity,projectRole}); nav("intake");
+                }}/>
+                <section className="paper"><h3>Firma için çalışma dosyası</h3>
+                  <p>Yanıtlardan hareketle bir pilot seçin. Çalışma masasında sorumlusunu, hedef tarihini ve sonraki adımı takip edin.</p>
                   <button
                     className="primary"
                     onClick={() =>
