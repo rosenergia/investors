@@ -31,7 +31,10 @@ type FileRow = {
   task: string;
   canReview: boolean;
 };
+import { CompanyBrief } from "./company-brief";
+
 type View =
+  | "company"
   | "intake"
   | "sector"
   | "map"
@@ -321,6 +324,7 @@ export default function Page() {
       slug ||
       {
         home: "genel-bakis",
+        company: "slovenya-sirketi",
         intake: "basvuru",
         sector: "sektor/" + chosen,
         map: "harita/" + chosen,
@@ -342,6 +346,7 @@ export default function Page() {
   restore.current = () => {
     const [route, key, section] = location.hash.slice(1).split("/");
     if (route === "basvuru" || (!route && invite)) navigate("intake", false);
+    else if (route === "slovenya-sirketi") navigate("company", false);
     else if (route === "sektor") {
       setChosen(sectors.some((s) => s.id === key) ? key : "tekstil");
       navigate("sector", false);
@@ -594,11 +599,12 @@ export default function Page() {
       <main
         id="main-content"
         className={
-          view === "home" || view === "map" || view === "sector"
+          view === "home" || view === "company" || view === "map" || view === "sector"
             ? "home-main"
             : "shell inner-main"
         }
       >
+        {view === "company" && <CompanyBrief />}
         {view === "home" && (
           <Home
             intake={() => nav("intake")}

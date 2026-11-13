@@ -1694,3 +1694,18 @@ footer .foot-brand {
 .si-brief-grid dt{font-size:16px;font-weight:650;margin-bottom:3px}
 @media(max-width:700px){.si-hero,.si-brief-grid{grid-template-columns:1fr}.si-hero-image{height:clamp(150px,43vw,260px)}.si-brief-bar select{font-size:15px}.journal-brand{font-size:18px;gap:4px}.journal-brand svg{width:19px}}
 @media(max-width:380px){.journal-brand svg{display:none}.journal-brand{font-size:16px}.journal-actions .blue{padding-inline:8px}}
+
+.si-hero-copy>a+a {margin-top:10px}
+.company-brief {max-width:1150px;margin:0 auto;padding-block:clamp(32px,6vw,86px)}
+.company-brief header {max-width:800px;margin-bottom:32px}
+.company-brief h1 {font-size:clamp(39px,5.5vw,78px);line-height:1.03;letter-spacing:-.05em;font-weight:450;margin:14px 0 24px}
+.company-brief header>p:last-child,.company-reading p {font-size:clamp(16px,1.35vw,20px);line-height:1.55}
+.company-brief details {border-top:1px solid #adbbb4}
+.company-brief details:last-child {border-bottom:1px solid #adbbb4}
+.company-brief summary {padding:20px 4px;cursor:pointer;font-size:clamp(20px,2.2vw,32px);line-height:1.2;letter-spacing:-.025em}
+.company-brief summary::marker {color:#31634d;font-size:.65em}
+.company-reading {max-width:78ch;padding:0 4px 22px}
+.company-reading p {margin:0 0 14px}
+.company-reading h2 {font-size:16px;margin:0 0 4px}
+.company-sources {display:flex;flex-wrap:wrap;gap:8px 18px}
+.company-sources a {font-size:14px;text-underline-offset:3px;color:#27523e}

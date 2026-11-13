@@ -17,7 +17,7 @@ import { SloveniaBrief } from "./slovenia-brief";
 import { MarketExplorer } from "./markets";
 import { profiles } from "../lib/discovery";
 import { growth } from "../lib/growth";
-type Route = "sector" | "home" | "guide" | "desk" | "map" | "intake";
+type Route = "company" | "sector" | "home" | "guide" | "desk" | "map" | "intake";
 export function Logo() {
   return (
     <svg
@@ -87,6 +87,7 @@ export function Header({
       .includes(term),
   );
   const actions = [
+    { text: "Slovenya şirketiyle Avrupa’da iş geliştirmek", fn: () => navigate("company") },
     { text: "Firma başvurusu", fn: () => navigate("intake") },
     { text: "Yeni değerlendirme", fn: newFile },
     { text: "Dosyalarım", fn: () => navigate("desk") },
@@ -125,6 +126,7 @@ export function Header({
         {(
           [
             ["home", "Brifing masası"],
+            ["company", "Slovenya şirketi"],
             ["sector", "Sektör geliştirme"],
             ["map", "İlişki haritası"],
             ["guide", "Müşteriyi tanıma"],
