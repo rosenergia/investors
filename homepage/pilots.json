@@ -1,0 +1,254 @@
+{
+  "tekstil": {
+    "AT": [
+      "İş kıyafeti distribütörü",
+      "Graz’da bir distribütöre aynı iş pantolonunu iki teslim seçeneğiyle sunun. Ana partiyi fabrikadan, eksilen bedenleri yakın depodan gönderin.",
+      "Beden yüzünden kaçan sipariş sayısı ve ek teslim başına katkı."
+    ],
+    "IT": [
+      "Kuzey İtalya’da özel markalı giyim alıcısı",
+      "Numunesi onaylanan tek modelin hızlı satan renginde ikinci bir üretim penceresi ayırın. Alıcıyla kumaş tonunu ve yeniden sipariş gününü belirleyin.",
+      "Renk onayından rafa kadar geçen gün ve ikinci parti adedi."
+    ],
+    "HU": [
+      "Budapeşte’de kurumsal giyim tedarikçisi",
+      "Bir fabrika için çalışan başına etiketlenmiş kıyafet setleri hazırlayın. Karışık beden kolilerini toplu sevkle aynı kapsamda fiyatlayın.",
+      "Teslimde eksik set sayısı ve tamamlanan set başına maliyet."
+    ],
+    "HR": [
+      "Otel gruplarına çalışan tekstil toptancısı",
+      "Bir otelin sezon açılışında önlük ve personel gömleklerini tek parti gönderin. Sezon içi yeni çalışanlar için model ve renk devamlılığını deneyin.",
+      "Sezon içi tamamlanan siparişler ve değiştirilen bedenin toplam maliyeti."
+    ],
+    "SI": [
+      "Ljubljana’da bölgesel giyim dağıtıcısı",
+      "Bir iş kıyafeti serisinde ortak stoktan şehir içi teslim ve iki komşu pazara küçük koli çıkışı için ayrı fiyat alın.",
+      "Teslim adresi bazında toplama, son taşıma ve iade bedeli."
+    ],
+    "DE": [
+      "Birden fazla şubeye teslim isteyen kurumsal alıcı",
+      "Ana kolileri tek Alman depoya verip iki şubeye haftalık ikmal deneyin. Alıcının kabul ettiği teslim günü ve paket listesiyle fiyatlayın.",
+      "Tam ve zamanında teslim edilen koli oranı ile şube başına katkı."
+    ],
+    "CZ": [
+      "Prag çevresinde iş güvenliği ve giyim satıcısı",
+      "Bir müşterinin vardiya değişiminde kullanacağı bedenleri örnek setle doğrulayın. Onaylanan beden dağılımı için dönemlik çağrılı sipariş önerin.",
+      "Numuneden siparişe dönüşen set ve iade edilen beden sayısı."
+    ],
+    "PL": [
+      "Kendi markasıyla satış yapan çevrimiçi mağaza",
+      "Bir ürün ailesini sınırlı beden aralığıyla satışa alın. Alıcının iade adresini ve tekrar satılabilen ürünün stoğa dönüş süresini belirleyin.",
+      "İadelerden sonra net satış katkısı ve yeniden satılabilir ürün oranı."
+    ]
+  },
+  "celik": {
+    "AT": [
+      "Sanayi yapısı için teklif toplayan genel yüklenici",
+      "Tek bir açıklığın kiriş ve kolonlarını onaylı revizyona göre fiyatlayın. Graz’daki örnek saha için araç sırası, vinç randevusu ve montajı ayrı gösterin.",
+      "Monte edilen ton başına toplam bedel ve vinç bekleme saati."
+    ],
+    "IT": [
+      "Çelik işleri alan bölgesel montaj yüklenicisi",
+      "Kuzey İtalya’da tek bir sundurmanın atölye birleşimleriyle sahada yapılacak bağlantılarını ayırın. Sevk paketlerini montaj sırasına göre düzenleyin.",
+      "Ekip-gün, eksik bağlantı parçası ve saha düzeltme gideri."
+    ],
+    "HU": [
+      "Fabrika genişletmesini yöneten proje yüklenicisi",
+      "Budapeşte çevresinde teklif edilen bir ek bina için metrajı çizim sürümüne bağlayın. İşveren revizyon istediğinde farkın nasıl fiyatlanacağını teklif ekine yazın.",
+      "İlk ve son metraj farkı ile onaylı değişiklik bedeli."
+    ],
+    "HR": [
+      "Kıyıdaki bir tesisin bakım yüklenicisi",
+      "Mevcut yapıda tek bir platform yenilemesi seçin. Yüzey hazırlığı, kaplama sistemi ve yerinde rötuşu alıcının verdiği şartnameyle fiyatlayın.",
+      "Kabulde kaplama düzeltme maliyeti ve saha kapanış tarihi."
+    ],
+    "SI": [
+      "Depo projesinin yerel montaj ortağı",
+      "Bir depo aksını tek sevkiyatta kuracak biçimde paketleyin. Ljubljana çevresinde yerel ekipten boşaltma ve montaj için aynı kapsama fiyat alın.",
+      "Kurulan aks başına maliyet ve araç boşaltma süresi."
+    ],
+    "DE": [
+      "Tesis revizyonu yapan çelik imalatçısı",
+      "Bir erişim platformunu çizime göre ön montajlı gönderme ve yerinde birleştirme seçenekleriyle teklif edin. Saha ölçüsünü alıcıyla imalat öncesinde onaylayın.",
+      "Duruş penceresine sığan montaj saati ve tekrar işçilik."
+    ],
+    "CZ": [
+      "Makine taşıyıcı şasesi satın alan entegratör",
+      "Tek şasede referans yüzeyleri ve delik toleransını kesinleştirin. Ölçüm raporunu sevkten önce alıcıya gönderip onaylayın.",
+      "İlk kurulumda uyum ve ölçüden kaynaklanan düzeltme gideri."
+    ],
+    "PL": [
+      "Lojistik tesisi kuran proje firması",
+      "Bir depo bölümünün çeliğini kamyon yüküne ve saha indirme sırasına göre bölün. Aynı metrajda doğrudan teslim ile geçici saha stoğunu karşılaştırın.",
+      "Teslim edilmiş ton maliyeti ve ikinci elleçleme sayısı."
+    ]
+  },
+  "enerji": {
+    "AT": [
+      "Sanayi çatılarında çalışan güneş enerjisi yüklenicisi",
+      "Tek bir tesisin gündüz tüketim eğrisiyle önerilen sistemin üretim tahminini eşleştirin. İşverene sahada tüketilecek ve dışarı verilecek enerjiyi ayrı gösterin.",
+      "Ölçülen öz tüketim, üretim tahmin farkı ve servis gideri."
+    ],
+    "IT": [
+      "Soğuk depo işleten gıda firması",
+      "Kuzey İtalya’da bir soğuk odanın kompresör çekişini izleyin. Kontrol değişikliğini aynı sıcaklık aralığında, benzer ürün yüküyle deneyin.",
+      "Ton ürün başına kWh ve sıcaklık sınırı dışında geçen süre."
+    ],
+    "HU": [
+      "Üretim tesisinin enerji yöneticisi",
+      "Bir kompresör hattında boşta çalışma ve basınç kaybını kaydedin. Ayar değişikliğinden önce ve sonra aynı vardiyada sayaç okuması alın.",
+      "Üretim miktarına göre düzeltilmiş tüketim ve duruş saati."
+    ],
+    "HR": [
+      "Otelin teknik işletme ekibi",
+      "Örnek bir otelde sıcak su tüketimini dolulukla eşleştirin. Isı geri kazanımını önce sezonun belirli bir bölümünde ölçülebilen tek devrede deneyin.",
+      "Konaklayan kişi başına sıcak su enerjisi ve bakım maliyeti."
+    ],
+    "SI": [
+      "Yerel güneş enerjisi kurulum ve bakım firması",
+      "Bir ticari çatı için ekipmanı, ilk çalıştırmayı ve garanti çağrısını ayrı fiyatlayın. Arıza halinde uzaktan tanı ve saha müdahalesini ortakla prova edin.",
+      "Müdahale süresi, yeniden ziyaret sayısı ve hizmet maliyeti."
+    ],
+    "DE": [
+      "Üretim hattının elektrik bakım yöneticisi",
+      "Tek hattın pik güç talebini ölçün. Bir bataryanın çalışma programını gerçek tarife ve sayaç profiliyle simüle edip yatırım ile bakım bedelini ayrı gösterin.",
+      "Azaltılabilen kW, kullanılabilir çevrim ve tarifeye göre parasal karşılık."
+    ],
+    "CZ": [
+      "Talaşlı imalat tesisinin işletme müdürü",
+      "Bir atölyede makinelerin beklemedeki yükünü ölçün. Vardiya sonu kapatma planını üretime dönüş zamanını da kaydederek deneyin.",
+      "Vardiya başına kWh ve yeniden çalıştırma süresi."
+    ],
+    "PL": [
+      "Dağıtım deposunun teknik yöneticisi",
+      "Aydınlatma kontrolünü tek koridorda test edin. Çalışma saatlerini, ölçülen ışık düzeyini ve sayaç tüketimini eski düzenle karşılaştırın.",
+      "Kabul edilen ışık düzeyinde açık kalma saati ve tüketim farkı."
+    ]
+  },
+  "gida": {
+    "AT": [
+      "Soğutulmuş ürün dağıtan bölgesel toptancı",
+      "Bir ürün için Graz’daki alıcıya iki gönderide sıcaklık kaydıyla teslim yapın. Depo kabul saatini ve istenen kalan raf ömrünü siparişe yazın.",
+      "Kabul edilen palet bedeli, kalan raf günü ve iade miktarı."
+    ],
+    "IT": [
+      "Taze gıda dağıtıcısı",
+      "Trieste çevresinde tek ürün için doğrudan soğutuculu sevk ile ortak araçta dağıtımı fiyatlayın. Boşaltma sırasında sıcaklığı kaydedin.",
+      "Sağlam teslim edilen kilo başına maliyet ve aktarma süresi."
+    ],
+    "HU": [
+      "Budapeşte’de perakende dağıtım merkezi",
+      "Bir paletin ürün ve koli etiketini alıcının mal kabul tarayıcısıyla önceden deneyin. İlk teslimi randevulu bir zaman aralığına bağlayın.",
+      "Mal kabul süresi, etiket reddi ve palet başına kesinti."
+    ],
+    "HR": [
+      "Otellere soğuk ürün sağlayan dağıtıcı",
+      "Sezon için bir ürünün dolulukla değişen siparişini haftalık izleyin. Küçük teslimde ek navlun ile otelde önlenen fireyi birlikte fiyatlayın.",
+      "Müşteride tüketilen kilo başına teslim gideri ve fire."
+    ],
+    "SI": [
+      "Soğuk depo ve dağıtım işletmesi",
+      "Ljubljana’da bir parti için çapraz sevk ile bir gece depolamayı aynı nihai adreslere göre karşılaştırın. Sıcaklık izini iki teslimde de saklayın.",
+      "Kalan raf günü başına katkı ve kabulde ayıklanan miktar."
+    ],
+    "DE": [
+      "Bölgesel market zincirinin kategori alıcısı",
+      "Tek ürünü bir depoya teslim edin. Promosyon haftası için tahmin ve teyit edilmiş hacmi ayrı planlayıp satılmayan miktarın kime ait olduğunu yazın.",
+      "Satışa dönen hacim ve iskonto sonrası katkı."
+    ],
+    "CZ": [
+      "Toplu yemek tedarikçisi",
+      "Bir mutfakta ürünün porsiyon verimini ölçün. Koli gramajını hazırlama süresi ve hizmete çıkan porsiyon sayısıyla sınayın.",
+      "Servis edilen porsiyon başına maliyet ve mutfak firesi."
+    ],
+    "PL": [
+      "Donuk gıda distribütörü",
+      "Tek paletin teslim ve depolama sıcaklık kayıtlarını alıcıyla paylaşın. İlk siparişte araç doluluğu ve iade taşımasını ayrı fiyatlayın.",
+      "Kabul edilen koli maliyeti ve hasarlı ambalaj oranı."
+    ]
+  },
+  "makine": {
+    "AT": [
+      "Üretim tesisine modernizasyon yapan entegratör",
+      "Bir istasyonda operatörün mevcut çevrim süresini ölçüp tek modül teklif edin. Kabul testini aynı ürün, yükleme ve operatör koşuluyla kurun.",
+      "Kabul edilen çevrim süresi ve planlanan duruşa uyum."
+    ],
+    "IT": [
+      "Ambalaj hattı kuran makine üreticisi",
+      "Yeni modül ile mevcut besleyicinin arayüzünü gerçek numuneyle deneyin. Fabrika kabulünde ürün değiştirme süresini de ölçün.",
+      "Format değişimi dakikası ve kabul edilen ürün adedi."
+    ],
+    "HU": [
+      "Vardiyalı üretim yapan fabrika",
+      "Bir otomasyon istasyonunu planlı duruşta değiştirmek için kablo, yazılım ve operatör eğitimini ayrı kapsamlandırın. Geri dönüş planını önceden prova edin.",
+      "Planı aşan duruş ve ilk vardiyada çıkan sağlam ürün."
+    ],
+    "HR": [
+      "Gıda işleme tesisi",
+      "Bir paketleme modülünü iki ambalaj boyuyla deneyin. Temizlik ve ürün geçişi süresini günlük kapasite hesabına katın.",
+      "Temizlik dahil saatlik sağlam paket ve servis ziyareti."
+    ],
+    "SI": [
+      "Fabrikalara bakım sağlayan servis ortağı",
+      "Tek bir hat için yaygın arıza parçalarını ve servis çağrısı akışını deneyin. Sınır ötesi gönderiyle yerelde küçük stok maliyetini kıyaslayın.",
+      "Parça bekleme saati ve arıza başına toplam servis maliyeti."
+    ],
+    "DE": [
+      "Kapasitesini artırmak isteyen seri imalatçı",
+      "Bir darboğazda modülün hızını, toleransı ve takip eden istasyondaki etkisini birlikte test edin. Son ödemeyi alıcı onaylı kabul adımına bağlayın.",
+      "Hattan çıkan sağlam parça/saat ve kabulden tahsilata gün."
+    ],
+    "CZ": [
+      "Makine imalatçısının tedarik ekibi",
+      "Tek fikstür veya alt modülde çizim revizyonu, referans ölçüsü ve fabrika kabul kayıtlarını ortaklaştırın.",
+      "İlk montajda uyum ve revizyon başına yeniden işleme süresi."
+    ],
+    "PL": [
+      "Depo otomasyonu entegratörü",
+      "Bir ayırma hücresini gerçek koli ebatlarıyla test edin. Yoğun saatlerde hatalı yönlendirmeyi ve manuel müdahaleyi kaydedin.",
+      "Doğru ayrılan koli/saat ve müdahale süresi."
+    ]
+  },
+  "hvac": {
+    "AT": [
+      "Ticari binalara hizmet veren mekanik yüklenici",
+      "Bir tesiste alıcının verdiği dış ve iç tasarım koşullarına göre cihaz teklif edin. İlk çalıştırmayı yerel servis ortağıyla aynı günde planlayın.",
+      "Kabulde kapasite, uzman-gün ve ek servis ziyareti."
+    ],
+    "IT": [
+      "Kuzey İtalya’da tesis yönetim firması",
+      "Tek bir hava işleme ünitesinde filtre değişimi, erişim ve parça teslimini bakım planıyla birlikte teklif edin.",
+      "Bakımda kesinti süresi ve yıllık sarf maliyeti."
+    ],
+    "HU": [
+      "Üretim tesisinin teknik satın almacısı",
+      "Bir üretim alanında cihazı gerçek vardiya yüküyle ölçün. Kurulum, otomasyon bağlantısı ve eğitim için sorumluları birlikte belirleyin.",
+      "İstenen sıcaklık aralığında üretim saati ve yeniden ayar süresi."
+    ],
+    "HR": [
+      "Konaklama tesisinin teknik müdürü",
+      "Bir otelin dolu katında programlı bakım için izin verilen saatleri öğrenin. Oda kullanımını etkileyen arızaya müdahaleyi yerel ekiple prova edin.",
+      "Kullanılamayan oda-saati ve ilk ziyarette giderilen arıza."
+    ],
+    "SI": [
+      "Isıtma ve soğutma cihazı distribütörü",
+      "Bir cihaz ailesi için kritik parçaları belirleyin. Ljubljana’dan servis ve müşteriye yakın teknisyen seçeneklerini tek bakım bölgesi için fiyatlayın.",
+      "Sahaya ulaşma süresi ve çağrı başına maliyet."
+    ],
+    "DE": [
+      "Mevcut binayı yenileyen proje firması",
+      "Bir kazan dairesi veya soğutma merkezinde mevcut bina otomasyonuyla haberleşmeyi kabul testine ekleyin. Veriyi işletmeciyle birlikte okuyun.",
+      "Doğru okunan ölçüm noktası ve kabul sonrası düzeltme."
+    ],
+    "CZ": [
+      "Üretim holü işleten fabrika",
+      "Bir bölümde havalandırmayı vardiya programıyla eşleştirip ayar öncesi ve sonrasını ölçün. Alıcının istediği iç ortam aralığını kayda alın.",
+      "Kabul aralığında çalışma saati ve tüketim farkı."
+    ],
+    "PL": [
+      "Dağıtım merkezi işleten tesis yöneticisi",
+      "Yükleme kapıları açıkken ve kapalıyken tek bir bölgenin ısıtma tepkisini ölçün. Arıza halinde yedek çözümü ve bakım ücretini teklif kapsamına alın.",
+      "Çalışma sıcaklığına dönüş süresi ve sezonluk hizmet bedeli."
+    ]
+  }
+}
