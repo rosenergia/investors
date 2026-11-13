@@ -1,0 +1,40 @@
+[
+  {"name":"İnşaat ve renovasyon","slug":"insaat-ve-renovasyon","image":"celik","intro":"Bir projede iş paketini, kabul yetkisini ve hakedişi kimin üstlendiğini teklif aşamasında belirleyin.","topics":[
+    ["yapisal-celik","Yapısal çelik ve konstrüksiyon","İmalat, sevkiyat ve montajı ayrı fiyatlayın. Çizim revizyonunda metrajı hangi tarafın onaylayacağını ve ek tonajın hakedişe nasıl gireceğini yazılı hale getirin."],
+    ["renovasyon","Renovasyon ve güçlendirme","Mevcut yapıda sökümden sonra ortaya çıkabilecek işleri ayrı bir kalem olarak ele alın. Kullanımın süreceği alanları, çalışma saatlerini ve değişiklik onayını işletmeciyle netleştirin."],
+    ["epc","EPC ve anahtar teslim projeler","Mühendislik, satın alma ve yapım paketlerinin birbirine hangi çıktıyı teslim edeceğini belirleyin. Devreye alma testini, performans kabulünü ve eksik işlerin kapanışını teklif takvimine bağlayın."],
+    ["sorumluluk","Sözleşme kapsamı ve sorumluluk paylaşımı","Tasarım onayı, saha teslimi, kaldırma ekipmanı, geçici işler ve garanti için ayrı sorumlu belirleyin. Bir gecikme örneğini ele alıp süre uzatımını kimin talep edeceğini ve maliyeti kimin onaylayacağını kontrol edin."],
+    ["ana-yukleniciler","Ana yükleniciler ve alt yükleniciler","Rönesans gibi bir ana yükleniciye teklif hazırlayan firma için ilk iş, hangi pakete talip olduğunu belirlemektir. Ön yeterlik için istenen referansları, teknik onay merciini ve hakedişi imzalayacak tarafı proje bazında doğrulayın."]
+  ]},
+  {"name":"Enerji","slug":"enerji","image":"enerji","intro":"Proje gelirini ve işletme yükünü belirleyen kaynak, bağlantı, kabul ve bakım koşullarını inceleyin.","topics":[
+    ["yenilenebilir","Yenilenebilir enerji projeleri","Kaynak verisinin hangi dönemi kapsadığını, üretilen elektriğin kim tarafından kullanılacağını ve bağlantı varsayımını bir araya getirin. Karşılaştırmayı aynı teslim ve işletme kapsamı üzerinden yapın."],
+    ["gunes","Güneş enerjisi","Saatlik tüketimi beklenen güneş üretimiyle eşleştirin. Öz tüketim, şebekeye verilen enerji ve olası kesinti için ayrı hesap isteyin."],
+    ["ruzgar","Rüzgâr enerjisi","Rüzgâr ölçümünün dönemiyle birlikte saha erişimi, türbin taşımacılığı ve kaldırma takvimini değerlendirin. Bakım erişiminin duruş süresini nasıl etkilediğini yerel ekiple doğrulayın."],
+    ["dogalgaz","Doğalgaz ve kombine çevrim","Yakıt tedarik koşullarını, tesisin beklenen yük profilini ve planlı bakım duruşlarını aynı senaryoda karşılaştırın. Performans garantisinin hangi çalışma koşullarında ölçüleceğini belirleyin."],
+    ["jeotermal","Jeotermal enerji ve çevrim santralleri","Kuyu debisi ve sıcaklığı için ölçüm tarihini isteyin. Pompalama tüketimi ile reenjeksiyon koşullarını hesaba katıp alıcının kullanabileceği net elektrik veya ısı miktarını değerlendirin."]
+  ]},
+  {"name":"Gıda ve soğuk zincir","slug":"gida-ve-soguk-zincir","image":"gida","intro":"Ürünün alıcıya hangi sıcaklıkta, ne kadar raf ömrüyle ve hangi kayıpla ulaştığını karşılaştırın.","topics":[
+    ["taze-urunler","Taze meyve ve sebze","Hasat, ön soğutma ve sevkiyat saatlerini aynı parti üzerinde izleyin. Alıcının kalite sınıfına giren kasa sayısı ile reddedilen miktarı karşılaştırın."],
+    ["hayvansal-urunler","Et, süt ve su ürünleri","Alıcının teslim sıcaklığı ve kalan raf ömrü şartlarını siparişe bağlayın. Bir partinin sıcaklık kaydını ve teslim fişini birlikte inceleyin."],
+    ["dondurulmus-gida","Dondurulmuş ve işlenmiş gıda","Ambalaj hasarı ve sıcaklık sapmasında partinin nasıl ayrılacağını önceden kararlaştırın. İskonto, ret ve yeniden taşıma giderini teslim edilen miktara dağıtın."],
+    ["depo-ve-tasima","Soğuk depolama ve soğutmalı taşıma","Ön soğutmadan alıcının deposuna kadar her devir noktasını işaretleyin. Aktarma beklemesini, araç doluluğunu ve sıcaklık kaydını sağlam teslim edilen palet başına maliyetle değerlendirin."],
+    ["izlenebilirlik","Parti izlenebilirliği ve ürün kabulü","Bir örnek partiyi üretimden teslim fişine kadar izleyin. İade veya ret durumunda hangi kayıtla hangi tedarikçiye, araca veya depoya dönüleceğini alıcıyla sınayın."]
+  ]},
+  {"name":"Endüstri","slug":"endustri","image":"makine","intro":"Malzeme, tolerans, üretim verimi ve saha kabulü üzerinden Avrupa’daki sanayi alıcısına teklif hazırlayın.","topics":[
+    ["demir-celik","Demir ve çelik","Kalite sınıfını, parti sertifikasını ve kabul edilen toleransı alıcıyla eşleştirin. Bir partide yeniden işlenen tonajı ve maliyetini hesaplayın."],
+    ["aluminyum","Alüminyum ve ekstrüzyon","Alaşım, profil kesiti, yüzey işlemi ve kalıp ömrünü teklif kapsamına alın. İlk numune onayından seri üretime kadar geçen süreyi planlayın."],
+    ["dokum","Döküm ve metal işleme","Kritik ölçüler için numune kabul yöntemini ve seri kontrol sıklığını belirleyin. Talaş, hurda ve yeniden işleme giderini kabul edilen parça başına değerlendirin."],
+    ["makine","Makine ve endüstriyel otomasyon","Hat entegrasyonunda fabrika ve saha kabul testini ayırın. İlk duruşta hangi parçayı hangi ekibin değiştireceğini ve servis maliyetini teklife ekleyin."]
+  ]},
+  {"name":"İklim değişikliği ve iklimlendirme","slug":"iklim-ve-iklimlendirme","image":"hvac","intro":"Binalarda ve sanayi tesislerinde ısıl konforu, enerji tüketimini ve iklim risklerine karşı işletme sürekliliğini birlikte değerlendirin.","topics":[
+    ["hvac","HVAC ve bina iklimlendirmesi","Bir kullanım alanı için çalışma saatlerini, iç hava koşullarını ve kabul aralığını alıcıyla belirleyin. Devreye alma ve servis kapsamını ayrı fiyatlayın."],
+    ["isi-pompalari","Isı pompaları ve ısı geri kazanımı","Isı kaynağı ile tüketim ihtiyacını aynı saatlerde karşılaştırın. Düşük dış sıcaklıkta yedek sistem kullanımını ve sayaçla izlenecek verimi belirleyin."],
+    ["verimlilik","Enerji verimliliği ve emisyon azaltımı","Başlangıç tüketimini ve karşılaştırma dönemini kaydedin. Üretim miktarı ve dış hava koşulları değiştiğinde tasarruf hesabının nasıl düzeltileceğini kararlaştırın."],
+    ["uyum","İklim risklerine uyum","Sıcak hava, taşkın veya su kısıtının üretimi nerede durdurduğunu olay kayıtlarından çıkarın. Öncelikli tesis için bir önlem seçin ve kazanılan çalışma süresini izleyin."]
+  ]},
+  {"name":"Tekstil ve hazır giyim","slug":"tekstil","image":"tekstil","intro":"Numune onayından tekrar siparişe kadar beden, renk, termin ve ikmal maliyetini takip edin.","topics":[
+    ["hazir-giyim","Hazır giyim ve özel marka","Tek model seçip alıcının istediği beden dağılımı ile ilk siparişi karşılaştırın. Eksilen bedeni ikinci kez gönderme maliyetini ayrı hesaplayın."],
+    ["teknik-tekstil","Teknik tekstil ve iş kıyafeti","Numune onayını hangi kullanım koşulunun belirlediğini netleştirin. Beden değişimi ve dönem içi ikmal için bir dağıtıcıyla örnek sipariş hazırlayın."],
+    ["kumas","Kumaş, iplik ve ev tekstili","Metrajı, renk devamlılığını ve minimum parti büyüklüğünü tekrar siparişle birlikte ele alın. Bir ton farkında kabulü kimin vereceğini belirleyin."]
+  ]}
+]
