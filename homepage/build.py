@@ -1,4 +1,5 @@
 """Build the investors.com.tr homepage and country briefings using the Python standard library."""
+import hashlib
 import json
 from pathlib import Path
 from html import escape
@@ -28,12 +29,54 @@ sectors = {
 }
 globe='<svg viewBox="0 0 32 32" width="29" height="29" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.35"><circle cx="16" cy="16" r="13"/><ellipse cx="16" cy="16" rx="6" ry="13"/><path d="M3 16h26M5 9.5q11 5 22 0M5 22.5q11-5 22 0"/></svg>'
 brand=f'<a class="brand" href="/" aria-label="investors.com.tr ana sayfa">{globe}investors.com.tr</a>'
+def menu_item(url, title, caption, *, image=None, code=None, current=False):
+    icon = (f'<img src="/media/{image}.webp" alt="" loading="lazy">' if image
+            else f'<span class="menu-code" aria-hidden="true">{code}</span>')
+    active = ' aria-current="page"' if current else ''
+    return (f'<a class="menu-item" href="{url}"{active}>{icon}<span>'
+            f'<small>{caption}</small><strong>{title}</strong></span>'
+            '<span class="menu-arrow" aria-hidden="true">→</span></a>')
+
+def site_menu(path):
+    groups = {
+        'ulkeler': ('Ülkeler', [menu_item(f'/ulkeler/{slug}/', name, 'Ülke brifingi', code=code,
+                                           current=path == f'/ulkeler/{slug}/')
+                                for code, name, slug, *_ in countries]),
+        'sektorler': ('Sektörler', [menu_item(f'{DESK}#sektor/{key}', row[0], 'Sektör brifingi', image=key)
+                                    for key, row in sectors.items()]),
+        'masa': ('Brifing masası', [
+            menu_item(DESK, 'Slovenya Brifing Masası', 'Ülke masası', image='harbor'),
+            menu_item(f'{DESK}#basvuru', 'Firma başvurusu', 'Müşteriyi tanıma', code='↗'),
+            menu_item('/#yaklasim', 'Hakkımızda', 'investors.com.tr', code='i'),
+            menu_item('/', 'Ana sayfa', 'investors.com.tr', code='⌂', current=path == '/'),
+        ]),
+    }
+    buttons = []
+    sections = []
+    for key, (label, items) in groups.items():
+        active = key == 'ulkeler'
+        buttons.append(f'<button type="button" data-group="{key}" aria-controls="liste-{key}" '
+                       f'aria-pressed="{str(active).lower()}">{label}</button>')
+        sections.append(f'<section id="liste-{key}" aria-label="{label}"'
+                        + ('' if active else ' hidden') + '>' + ''.join(items) + '</section>')
+    return f'''<dialog id="drawer" aria-label="Site menüsü">
+      <div class="menu-tools"><button id="close" aria-label="Menüyü kapat" autofocus>×</button>
+      <span aria-hidden="true" class="search-icon"></span>
+      <input type="search" id="menu-search" aria-label="Ülke, sektör veya sayfa ara" placeholder="Ülke, sektör veya sayfa ara" autocomplete="off"></div>
+      <div class="menu-layout"><div class="menu-categories" role="group" aria-label="Menü kategorileri">{''.join(buttons)}</div>
+      <div class="menu-results">{''.join(sections)}<p id="menu-empty" hidden>Sonuç bulunamadı. Başka bir kelime deneyin.</p></div></div>
+      </dialog>'''
+
+def asset_url(filename):
+    digest = hashlib.sha256((OUT / filename).read_bytes()).hexdigest()[:12]
+    return f'/{filename}?v={digest}'
+
 def shell(title, desc, path, body):
     links='<a href="/#ulkeler">Ülkeler</a><a href="/#sektorler">Sektör brifingleri</a><a href="/#yaklasim">Hakkımızda</a>'
     return f'''<!doctype html>
-<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)}</title><meta name="description" content="{escape(desc,quote=True)}"><link rel="canonical" href="{BASE}{path}"><meta property="og:title" content="{escape(title,quote=True)}"><meta property="og:image" content="{BASE}/media/harbor.webp"><link rel="icon" href="/globe.svg"><link rel="stylesheet" href="/style.css"><script defer src="/site.js"></script></head><body>
-<a class="skip" href="#icerik">İçeriğe geç</a><header><div class="mast"><button id="menu" aria-haspopup="dialog"><span class="hamb" aria-hidden="true"></span>Menü</button>{brand}<a class="desk" href="{DESK}">Slovenya masası <span>↗</span></a></div><nav aria-label="Ana gezinme"><a href="/" {'aria-current="page"' if path=='/' else ''}>Ana sayfa</a>{links}</nav></header>
-<dialog id="drawer" aria-label="Site menüsü"><div class="dialoghead">{brand}<button id="close" aria-label="Menüyü kapat">×</button></div><div class="menulinks">{links}<a href="{DESK}">Slovenya Brifing Masası ↗</a></div></dialog>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)}</title><meta name="description" content="{escape(desc,quote=True)}"><link rel="canonical" href="{BASE}{path}"><meta property="og:title" content="{escape(title,quote=True)}"><meta property="og:image" content="{BASE}/media/harbor.webp"><link rel="icon" href="/globe.svg"><link rel="stylesheet" href="{asset_url('style.css')}"><script defer src="{asset_url('site.js')}"></script></head><body>
+<a class="skip" href="#icerik">İçeriğe geç</a><header><div class="mast"><button id="menu" aria-haspopup="dialog" aria-expanded="false" aria-controls="drawer"><span class="hamb" aria-hidden="true"></span>Menü</button>{brand}<a class="desk" href="{DESK}">Slovenya masası <span>↗</span></a></div><nav aria-label="Ana gezinme"><a href="/" {'aria-current="page"' if path=='/' else ''}>Ana sayfa</a>{links}</nav></header>
+{site_menu(path)}
 <main id="icerik">{body}</main><footer><div>{brand}<p>Orta Avrupa ve Slovenya Yatırım İnisiyatifi</p></div><div>{links}<a href="/media/fotograflar.txt">Fotoğraf kredileri</a></div></footer></body></html>'''
 def country_links():
     return ''.join(f'<a href="/ulkeler/{slug}/"><span class="code">{code}</span><span>{name}</span><span class="arrow">→</span></a>' for code,name,slug,*_ in countries)
