@@ -2,6 +2,7 @@ import "./globals.css";
 import "./intake.css";
 import "./atlas.css";
 import "./journal.css";
+import "./company-brief.css";
 export const metadata = {
   title: "investors.com.tr · Slovenya Brifing Masası",
   description:

@@ -44,14 +44,14 @@ const css = (
     ),
   )
 ).join("\n");
-function standalone(js, title) {
+function standalone(js, title, pageCss = "") {
   return (
     '<!doctype html><html lang="tr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' +
     title +
     '</title><link rel="icon" href="data:image/svg+xml,' +
     favicon +
     '"><style>' +
-    css +
+    css + pageCss +
     '</style><div id="root"></div><script>window.atlasPhotos=' +
     JSON.stringify(photos) +
     ";" +
@@ -68,7 +68,7 @@ const intake = await bundle(
 );
 await writeFile(
   root + "portable/index.html",
-  standalone(atlas, "investors.com.tr · Slovenya Brifing Masası"),
+  standalone(atlas, "investors.com.tr · Slovenya Brifing Masası", await read("app/company-brief.css")),
 );
 const form = standalone(intake, "Firma başvurusu · investors.com.tr · Slovenya Brifing Masası");
 await writeFile(root + "public/firma-basvurusu.html", form);
