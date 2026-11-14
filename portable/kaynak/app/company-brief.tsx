@@ -5,87 +5,147 @@ import { photograph } from "../lib/editorial";
 const chapters = [
   {
     topic: "Finansman",
-    scenario: "Alıcım vadeli ödeme istiyor",
+    scenario: "Kredi erişimini şirketin nakit akışı belirliyor",
     photo: "harbor",
     steps: [
-      ["Tedarikçi ödemesi", "Üreticiye avans ve bakiye ödemelerinin tarihlerini yerleştirin."],
-      ["Nakit açığı", "Alıcı avansını düşün. Tahsilata kadar kendi paranızla karşılamanız gereken en yüksek tutarı bulun."],
-      ["Tahsilat", "Alıcının ödeme tarihini kredi vadesiyle eşleştirin. Gecikirse kaç günlük ek finansman gerekeceğini hesaplayın."],
-    ],
+  [
+    "Tedarikçi ödemesi",
+    "Avans ve bakiye ödeme tarihleri, siparişin ne zaman nakit gerektirdiğini gösterir."
+  ],
+  [
+    "Nakit açığı",
+    "Alıcıdan gelen avans düşüldüğünde kalan ödeme ihtiyacı, finansman tutarını etkiler."
+  ],
+  [
+    "Tahsilat",
+    "Alıcının ödeme süresindeki uzama, işletme sermayesine duyulan ihtiyacı artırabilir."
+  ]
+],
     title: "Slovenya’da krediye erişim",
-    body: "Avusturyalı bir alıcı 60 gün vade isterken Türk üretici sevkten önce ödeme bekliyorsa Slovenya şirketinin finanse edeceği bir nakit açığı doğar. Bankayla siparişe bağlı işletme sermayesi limitini görüşün. Makine veya üretim hattı kuracaksanız yatırım kredisini ayrı değerlendirin. Sloven Girişim Fonu’nun KOBİ garantilerinde ilgili çağrının koşulları ve bankanın olumlu kredi kararı aranır. Yeni kurulan şirkete limit ve faiz, kuruluş belgesiyle otomatik tanımlanmaz.",
-    action: "Bir siparişin avans, tedarikçi ödemesi ve tahsilat tarihlerini çıkarın. Bankadan ihtiyaç duyulan tutar için faiz, komisyon, teminat ve varsa ana şirket kefaletini içeren yazılı koşulları isteyin.",
+    body: "Sloven Girişim Fonu, uygun KOBİ yatırımları için banka kredisi garantileri sunuyor. Süreç, ilgili çağrının koşullarını ve bankanın olumlu kredi kararını içeriyor. Şirketin Slovenya’da kayıtlı olması, bankanın gelir, borç, teminat ve geri ödeme kapasitesi değerlendirmesinin yalnızca bir parçası. Vadeli satış yapan bir işletmede finansman ihtiyacını tedarikçiye ödeme ile alıcıdan tahsilat arasındaki süre belirliyor.",
+    outlook: "Düzenli siparişler ve öngörülebilir tahsilatlar oluşursa yerel finansman ilişkisi geliştirmek kolaylaşabilir. Talep zayıflar veya tahsilat süresi uzarsa aynı satış hacmi daha fazla işletme sermayesi gerektirebilir. Bu nedenle kredi teklifinin toplam maliyeti ve şirketin taşıyabileceği nakit açığı birlikte değerlendirilmelidir.",
+    action: "Banka teklifindeki faiz, komisyon ve teminat koşulları. Sipariş avansları, ortalama tahsilat süresi ve en yüksek nakit açığı.",
     refs: [["Sloven Girişim Fonu · banka kredisi garantileri","https://www.podjetniskisklad.si/en/sef-role/financial-incentives/guarantees/"],["SID Bank · finansman seçenekleri","https://www.sid.si/financiranje/"]]
   },
   {
     topic: "Kredibilite",
-    scenario: "Yeni şirketime güven oluşturmak istiyorum",
+    scenario: "Ticari güven, belgelenen faaliyetle oluşuyor",
     photo: "makine",
     steps: [
-      ["Şirket kaydı", "Yetkili imzacı, sözleşme tarafı ve garanti muhatabını aynı dosyada gösterin."],
-      ["Ödeme geçmişi", "İştirakin kendi teslimatlarını ve tahsilatlarını belgeleyin. Ana şirketten gelen desteğin kapsamını yazın."],
-      ["Alıcı incelemesi", "Alıcıdan vadeli çalışmaya geçmeden önce hangi referansları ve mali bilgileri görmek istediğini öğrenin."],
-    ],
+  [
+    "Şirket kaydı",
+    "Şirket sicili ve imza yetkisi, sözleşmenin tarafını tanımlar."
+  ],
+  [
+    "Ödeme geçmişi",
+    "Gerçekleşen teslimat ve ödemeler, işletmenin faaliyet kaydını oluşturur."
+  ],
+  [
+    "Alıcı incelemesi",
+    "Alıcının istediği referanslar ve hizmet koşulları, yerel şirketin sağlayabileceği katkıyı belirler."
+  ]
+],
     title: "Banka ve alıcı nezdinde kredibilite",
-    body: "Bir Avrupalı distribütör vadeli çalışmadan önce sözleşmeyi kimin imzalayacağını, siparişin kimin bilançosunda yer alacağını ve kusurlu üründe kime başvuracağını bilmek ister. Slovenya’da teslimat ve garanti sorumluluğunu fiilen üstlenen bir şirket bu soruları tek muhatapta toplayabilir. Bankalar açısından SISBIZ işletmelerin kredi yükümlülükleriyle ilgili bilgi sağlar. Türk ana şirketinin geçmişi yeni iştirakin kendi ödeme geçmişinden ayrı değerlendirilir.",
-    action: "Alıcıya şirket sicil bilgilerini, imza yetkisini ve garanti muhatabını sunun. Banka dosyasında iştirakin gerçekleşen satışlarını, ana şirket referanslarını ve varsa yazılı desteğini ayrı gösterin.",
+    body: "SISBIZ, Slovenya’da kredi veren kuruluşların işletmelere ilişkin bilgilere eriştiği bir sistem. Banka değerlendirmesiyle alıcının tedarikçi değerlendirmesi farklı süreçler üzerinden ilerliyor. Alıcı açısından sözleşmenin tarafı, teslimat geçmişi ve garanti hizmetinin kim tarafından sağlandığı önem taşıyabilir. Yeni iştirakin kendi faaliyet kaydı ile ana şirketin referansları farklı kanıtlar sunar.",
+    outlook: "Yerel ekip ve servis kapasitesi, bunları satın alma koşulu olarak arayan müşterilerde iş ilişkisini kolaylaştırabilir. Şirketin faaliyet hacmi sınırlı kaldığında yerel operasyonun sabit gideri sipariş başına daha yüksek olur. Ticari güven üzerindeki etki, alıcının kabul koşulları ve tekrar siparişleri üzerinden izlenebilir.",
+    action: "Tedarikçi kabulünde istenen belgeler, ilk siparişten tekrar siparişe geçiş, garanti yanıt süresi ve yerel operasyon gideri.",
     refs: [["Slovenya Merkez Bankası · SISBIZ","https://www.bsi.si/en/central-credit-register/sisbiz"]]
   },
   {
     topic: "Sigorta",
-    scenario: "Alacağımı sigortalamak istiyorum",
+    scenario: "Sigorta maliyeti, alıcı ve işlem riskine bağlı",
     photo: "tekstil",
     steps: [
-      ["Risk tanımı", "Alıcıyı, ülkeyi, vadeyi ve sigortalanacak alacak tutarını tanımlayın."],
-      ["Eşdeğer teklifler", "Aynı vade ve teminat yüzdesi için yazılı fiyat isteyin. Prim, masraf ve kapsam dışı durumları yan yana koyun."],
-      ["Hasar halinde", "Ödenmeyen bir faturada ihbar tarihini, bekleme süresini ve size kalan kaybı poliçede bulun."],
-    ],
+  [
+    "Risk tanımı",
+    "Alıcı, ülke ve vade, sigortalanacak işlemin risk profilini oluşturur."
+  ],
+  [
+    "Eşdeğer teklifler",
+    "Aynı kapsam ve teminat yüzdesiyle verilen teklifler karşılaştırılabilir bir maliyet zemini sağlar."
+  ],
+  [
+    "Hasar halinde",
+    "Bekleme süresi ve sigortalının üzerinde kalan zarar, poliçenin fiilî korumasını etkiler."
+  ]
+],
     title: "Sigorta primini aynı siparişte karşılaştırmak",
-    body: "Bir makineyi vadeli sattığınızda alıcının ödememesi ile makinenin taşınırken hasar görmesi iki ayrı risktir. Slovenya üzerinden satış, uygun işlemlerde yeni bir ihracat kredi sigortası seçeneği sunabilir. SID Bank’ın yabancı alıcı kredisi ürününde prim, alıcı ülkesinin ve alıcının riski, teminat yüzdesi ve süreye bağlıdır. Şirket adresi tek başına düşük prim sağlamaz. Ürüne göre Slovenya’dan sağlanan katkı gibi uygunluk koşulları da bulunur.",
-    action: "Aynı alıcı, bedel, vade ve teminat yüzdesiyle iki teklif alın. Prim ve masrafların yanında size kalan zarar payını, istisnaları ve tazminatın ne zaman ödeneceğini karşılaştırın.",
+    body: "SID Bank’ın yabancı alıcı kredisi sigortasında prim, alıcı ülkesinin risk sınıfına, alıcının riskine, teminat yüzdesine ve süreye bağlı. İlgili üründe iki yıl ve üzeri geri ödeme vadeleri için Slovenya katkısı dâhil ek koşullar yer alıyor. Bir Slovenya şirketi için uygun sigorta kanalının belirlenmesi, ihracatın niteliği ve poliçe kapsamının incelenmesini gerektiriyor.",
+    outlook: "Uygun bir poliçe tahsilat riskinin bir bölümünü sigortacıya aktarabilir ve finansman görüşmesine katkı sağlayabilir. Prim, kapsam dışında kalan riskler ve tazminat bekleme süresi toplam maliyeti artırabilir. İki ülke arasında maliyet avantajı, aynı alıcı ve aynı teminat koşullarına ait yazılı teklifler elde edildiğinde değerlendirilebilir.",
+    action: "Aynı vade ve kapsam için prim, komisyon, sigortalının taşıdığı zarar payı, alıcı limiti ve tazminat süresi.",
     refs: [["SID Bank · alıcı kredisi sigortasında prim ve kapsam","https://www.sid.si/zavarovanje/zavarovanje-za-banke/izvozni-krediti-zavarovanje-kredita-tujega-kupca/"]]
   },
   {
     topic: "İhaleler",
-    scenario: "Avrupa’da bir ihaleye girmek istiyorum",
+    scenario: "İhale erişimi, katılım ve yeterlik koşullarına bağlı",
     photo: "celik",
     steps: [
-      ["İlan seçimi", "Bir ilan numarası ve iş paketi seçin. Teklif sahibinden istenen belgeleri çıkarın."],
-      ["Yeterlik", "Slovenya şirketinin hangi koşulları kendisinin karşıladığını ve hangi kapasiteyi ortağından sağlayacağını belgeleyin."],
-      ["Teklif kararı", "Kalan belirsizlikleri idareye süresinde sorun. Yazılı açıklama, teminat ve maliyet üzerinden teklif kararını verin."],
-    ],
+  [
+    "İlan seçimi",
+    "Belirli bir ihale, uygulanacak koşulların ve iş paketinin incelenmesini sağlar."
+  ],
+  [
+    "Yeterlik",
+    "Teknik kapasite, referanslar ve mali yeterlik, teklif sahibinin uygunluğuna ilişkin kanıtları oluşturur."
+  ],
+  [
+    "Teklif kararı",
+    "Kabul koşulları, teminat ve sözleşme riski birlikte ele alındığında teklifin uygulanabilirliği değerlendirilir."
+  ]
+],
     title: "Avrupa’da kamu ihalelerine katılım",
-    body: "AB Adalet Divanının Kolin kararında, Hırvatistan’daki bir demiryolu ihalesine katılan Türk şirketi, ilgili uluslararası anlaşma kapsamında olmadığı için AB direktifine dayanarak eşit muamele talep edemedi. Bu, Türk firmalarına genel bir ihale yasağı anlamına gelmez. Slovenya’da fiilen faaliyet gösteren bir iştirak, kendi adına teklif verme olanağını belirli bir ilanda değerlendirebilir. Kuruluş yeri, mülkiyet veya kontrol, malın menşei, alt yüklenici kullanımı ve teknik yeterlik farklı koşullara tabi olabilir.",
-    action: "Tek bir ihale numarası seçin. Şartnamede isteklinin uygunluğunu, cironun ve referansların kime ait olması gerektiğini, ana şirketin kapasitesine dayanmak için istenen taahhüdü ve teminatı işaretleyin. Belirsiz kalan maddeyi son tarihten önce idareye yazılı sorun.",
+    body: "AB Adalet Divanının 2024 tarihli Kolin kararı, ilgili uluslararası anlaşmanın kapsamı dışında kalan üçüncü ülke isteklilerinin AB ihale direktifinden eşit muamele hakkı talep etmesini ele alıyor. Bir Slovenya iştirakinin katılımı ise ilgili ihale ve uygulanabilir kurallar üzerinden incelenmeli. İsteklinin kuruluşu, malın menşei, teknik yeterlik, ortaklık yapısı ve başka bir kuruluşun kapasitesine dayanma koşulları değerlendirmeyi etkileyebilir.",
+    outlook: "Fiilî faaliyet ve yeterli teknik kapasite geliştiren bir iştirak, uygun olduğu ihaleler için teklif hazırlayabilir. Ana şirketin deneyiminin kabulü, teminat ihtiyacı ve yerel yükümlülükler katılımın maliyetini değiştirebilir. İlan sayısındaki artışın ticari fırsata dönüşmesi, firmanın yeterlik koşullarını ve proje riskini karşılayabilmesine bağlıdır.",
+    action: "İlgili ilanın katılım şartları, referans kabulü, idarenin yazılı açıklamaları, teminat tutarı ve teklif hazırlama maliyeti.",
     refs: [["AB Adalet Divanı · Kolin, C-652/22","https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=ecli%3AECLI%3AEU%3AC%3A2024%3A910"],["AB · Uluslararası Kamu Alımları Aracı, madde 3","https://eur-lex.europa.eu/eli/reg/2022/1031"]]
   },
   {
     topic: "Dağıtım",
-    scenario: "Teslimatı ve servisi hızlandırmak istiyorum",
+    scenario: "Bölgesel stok, hizmet düzeyi ile maliyet arasında denge gerektiriyor",
     photo: "harbor",
     steps: [
-      ["Türkiye", "Aynı parça için doğrudan sevkin fiyatını ve teslim süresini kaydedin."],
-      ["Slovenya", "Yerel stok, elleçleme ve servis maliyetini sipariş başına hesaplayın."],
-      ["Orta Avrupa", "Bir alıcı adresinde iki güzergâhı karşılaştırın. Acil parçanın teslim zamanını ve iade maliyetini ölçün."],
-    ],
+  [
+    "Türkiye",
+    "Üretim çıkışındaki fiyat ve sevkiyat koşulları karşılaştırmanın başlangıcını oluşturur."
+  ],
+  [
+    "Slovenya",
+    "Aktarma, stok ve servis hizmetleri ek kapasiteyle birlikte ek maliyet getirir."
+  ],
+  [
+    "Orta Avrupa",
+    "Alıcıya ulaşan teslimatın süresi ve toplam maliyeti, güzergâhın ticari sonucunu gösterir."
+  ]
+],
     title: "Türkiye ile Orta Avrupa arasında dağıtım ve servis",
-    body: "Slovenya şirketi bir yedek parçayı yakın stokta tutabilir, iadeyi teslim alabilir veya müşterinin kendi saat diliminde montajı koordine edebilir. Örneğin Graz’daki bir fabrikaya düzenli ikmalde ana partiyi Türkiye’den, acil parçayı Slovenya’daki sözleşmeli depodan göndermek iki farklı teslim ihtiyacını karşılar. Koper’in Graz ve Budapeşte yönünde demir yolu bağlantıları vardır. En uygun güzergâhı sevkiyat büyüklüğü ve müşterinin teslim noktası belirler.",
-    action: "Tek bir ürün ve teslim adresi seçin. Türkiye’den doğrudan sevki yerel stokla karşılaştırırken taşıma, elleçleme, depolama, iade ve stoka bağlanan parayı maliyete ekleyin. Teslim süresini ve servis yanıtını ilk siparişte ölçün.",
+    body: "Koper Limanı’nın yayımladığı bağlantılar, Slovenya’yı Avusturya ve Macaristan dâhil bölgedeki merkezlere bağlıyor. Bu ağ bir dağıtım seçeneği sunuyor. Ürünün hacmi, teslim adresi, aktarma ihtiyacı ve taşıyıcının koşulları işletme açısından sonucun ne olacağını belirliyor. Yakın stok ve yerel servis, özellikle acil yedek parça veya sık ikmal ihtiyacı bulunan siparişlerde değerlendirilebilir.",
+    outlook: "Siparişler sıklaşır ve müşteriler kısa teslim süresine değer verirse bölgesel stokun ticari katkısı artabilir. Talep dalgalandığında stokta bekleme, değer kaybı ve finansman gideri yükselir. Doğrudan sevk ile ara depolu modelin sonucu, aynı ürün ve teslim adresinde ölçülen toplam maliyete bağlıdır.",
+    action: "Gerçekleşen teslim süresi, stok devir hızı, elleçleme ve iade gideri, servis yanıt süresi ve sipariş başına katkı.",
     refs: [["Koper Limanı · demir yolu bağlantıları","https://www.luka-kp.si/en/services-terminals/port-connections/railway-connections/"]]
   },
   {
     topic: "Üretim",
-    scenario: "Avrupa için sertifikalı üretim planlıyorum",
+    scenario: "Üretim yatırımı, uygunluk ve kapasite kullanımına birlikte dayanıyor",
     photo: "makine",
     steps: [
-      ["Ürün tanımı", "Tek bir parça, üretim tesisi ve hedef kullanım belirleyin."],
-      ["Üretim kontrolü", "Geçerli teknik şartnameye göre kontrol planını, test kayıtlarını ve değerlendirmede görev alacak tarafları belirleyin."],
-      ["İlk parti", "Malzeme ve test kayıtlarını teslim edilen partiyle eşleştirin. Gereken beyan ve belgeleri müşteriye sunun."],
-    ],
+  [
+    "Ürün tanımı",
+    "Kullanım amacı ve üretim yeri, ürün için incelenecek şartların belirlenmesine yardımcı olur."
+  ],
+  [
+    "Üretim kontrolü",
+    "Test, malzeme ve işlem kayıtları uygunluğun izlenmesini sağlar."
+  ],
+  [
+    "İlk parti",
+    "Müşteri kabulü ve üretim kayıtları, planlanan sürecin sahada nasıl işlediğini gösterir."
+  ]
+],
     title: "Sertifikalı üretim ve ürün uygunluğu",
-    body: "Slovenya’da çelik konstrüksiyon üretmek isteyen bir firma önce imal edeceği parçayı ve kullanım amacını belirlemeli. Şirketin kalite yönetim belgesi, fabrikanın üretim kontrolü ve ürünün uygunluk beyanı farklı ihtiyaçları karşılar. İlgili kurallar gerektiriyorsa üretici teknik dosyayı ve beyanı hazırlar, gerekli kuruluş değerlendirmesini tamamlar ve CE işaretini ürüne iliştirir. CE, ürünün AB menşeli olduğunu göstermez. Üretim Türkiye’de, son işlem Slovenya’da yapılıyorsa iki tesisin sorumluluğunu ve belgelerin hangi tesisi kapsadığını açıklayın.",
-    action: "Bir ürün çizimini, üretim adresini ve hedef kullanımı belirleyin. Uygulanacak teknik şartnameyi, gerekli testleri, fabrika üretim kontrolünü ve varsa yetkili kuruluşun kapsamını doğrulayın. İlk partiyi malzeme kaydından teslim tutanağına kadar izleyin.",
-    refs: [["Avrupa Komisyonu · ürün kuralları ve CE rehberi","https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52022XC0629(04)"],["AB · yapı ürünleri düzenlemesi","https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"]]
+    body: "AB ürün kurallarında yükümlülükler, ürünün niteliğine ve firmanın üretici veya ithalatçı olarak üstlendiği role göre belirleniyor. CE işareti, ilgili kurallar kapsamındaki ürünün uygunluk süreciyle ilişkili. Kalite yönetim belgesi, ürün beyanı ve fabrika üretim kontrolü farklı kapsamlar taşıyor. Türkiye ve Slovenya’daki tesislerin birlikte çalıştığı bir modelde üretim aşamaları, sorumluluklar ve izlenebilirlik kayıtları açıkça tanımlanmalı.",
+    outlook: "Belgelendirme ve izlenebilirlik, bunları arayan alıcıların tedarikçi değerlendirmesini destekleyebilir. Test, denetim ve kayıt yükü üretim maliyetine eklenir. Yerel üretimin ekonomik sonucu, doğrulanmış talep, kapasite kullanımı, işçilik, enerji ve lojistik giderlerinin birlikte değerlendirilmesiyle ortaya çıkar.",
+    action: "Ürüne uygulanacak kurallar, test ve denetim maliyeti, ilk partide uygunsuzluk oranı, kapasite kullanımı ve müşteri kabulü.",
+    refs: [["Avrupa Komisyonu · ürün kuralları ve CE rehberi","https://europa.eu/youreurope/business/product-rules-compliance/general-product-compliance/ce-marking/index_en.htm"],["AB · yapı ürünleri düzenlemesi","https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"]]
   },
 ];
 
@@ -135,8 +195,9 @@ export function CompanyBrief() {
           </div>
         </div>
         <div className="venture-reading" key={chapter.title}>
-          <div><h3>Brifing</h3><p>{chapter.body}</p></div>
-          <aside><h3>İlk adım</h3><p>{chapter.action}</p></aside>
+          <div><h3>Mevcut durum</h3><p>{chapter.body}</p></div>
+          <aside><h3>İzlenecek göstergeler</h3><p>{chapter.action}</p></aside>
+          <div className="venture-outlook"><h3>Koşullara bağlı öngörü</h3><p>{chapter.outlook}</p><small>investors.com.tr editoryal değerlendirmesi · 14 Kasım 2026</small></div>
           <div className="venture-refs"><h3>Resmî kaynaklar</h3>
             {chapter.refs.map(([label,url]) => <a key={url} href={url} target="_blank" rel="noreferrer">{label} ↗</a>)}
           </div>

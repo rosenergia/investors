@@ -51,3 +51,6 @@
   .venture-cover::before {background:linear-gradient(90deg,#0c211af2,#10251c9c)}
 }
 @media(max-width:380px){.venture-scene-content{padding:16px}.venture-cover h1{font-size:33px}.venture-steps button{padding-right:4px;overflow-wrap:anywhere}}
+
+.venture-outlook {grid-column:1/-1;border-top:1px solid #bbc9bf;padding-top:20px}
+.venture-outlook small {display:block;color:#52645a;margin-top:12px;font-size:13px}

@@ -23,7 +23,7 @@ export function SloveniaBrief({ open }: { open: (id: string) => void }) {
       <h1 id="si-brief-heading">Slovenya<br/>Brifing Masası</h1>
       <p>Slovenya’da ve komşu pazarlarda iş geliştiren üreticiler için alıcı profilleri, sahada sınanacak teklifler ve yatırım kararından önce aranacak kanıtlar.</p>
       <a href="#sektor-brifingi" onClick={e=>{e.preventDefault();document.getElementById("sektor-brifingi")?.focus();}}>Sektör brifingini seç <ArrowRight size={18}/></a>
-      <a href="#slovenya-sirketi">Slovenya şirketinin avantajları <ArrowRight size={18}/></a>
+      <a href="#slovenya-sirketi">Slovenya şirketi için koşullar ve görünüm <ArrowRight size={18}/></a>
     </div><div className="si-hero-image"><img src={photograph("harbor")} alt="Konteyner sahası ve yükleme vinçlerine havadan bakış" /></div></div>
     <div className="si-reading page-gutter" id="sektor-brifingi" tabIndex={-1}>
       <div className="si-brief-bar"><h2>Sektör brifingi</h2><label>Sektör seçin <select value={id} onChange={e=>choose(e.target.value)}>{sectorsInPrint.map(s=><option key={s.id} value={s.id}>{s.name}</option>)}</select></label></div>
