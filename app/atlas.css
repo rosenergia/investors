@@ -973,3 +973,6 @@ footer {
     min-height: 38px;
   }
 }
+
+/* Keep the keyboard skip link off screen during scrolling and tall captures. */
+.skip:not(:focus){clip-path:inset(50%);pointer-events:none}

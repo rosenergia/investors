@@ -1,0 +1,49 @@
+/* Shared corporate footer: investors.com.tr and the Slovenia briefing desk. */
+footer.corporate-footer{display:block;background:#101a18;color:#f3f5f1;border:0;padding:0;margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.55;text-align:left}
+.corporate-footer *{box-sizing:border-box}
+.corporate-footer .cf-wrap{width:100%;max-width:1680px;padding:72px clamp(24px,4.5vw,80px) 28px;margin:auto;display:block}
+.corporate-footer a{color:inherit;text-decoration:none;transition:color .18s,background .18s}
+.corporate-footer a:hover{color:#c8e7a9;text-decoration:underline;text-underline-offset:5px}
+.corporate-footer a:focus-visible{outline:2px solid #c8e7a9;outline-offset:5px;border-radius:2px}
+.corporate-footer p{margin:0;color:#b7c2bd;font-size:14px;line-height:1.7;max-width:none}
+.corporate-footer .cf-opening{display:grid;grid-template-columns:1.15fr 1fr;gap:64px;padding-bottom:56px;border-bottom:1px solid #34413b;align-items:center}
+.corporate-footer .cf-eyebrow{display:flex;align-items:center;gap:10px;font-size:10px;font-weight:700;letter-spacing:2px;color:#c8e7a9;margin-bottom:22px}
+.cf-eyebrow span{width:6px;height:6px;background:#c8e7a9;border-radius:50%}
+.corporate-footer h2{font:400 clamp(30px,3.25vw,49px)/1.13 Arial,Helvetica,sans-serif;letter-spacing:-1.6px;margin:0;color:#f3f5f1}
+.corporate-footer .cf-invitation{max-width:480px;justify-self:end}
+.corporate-footer .cf-invitation>p{font-size:16px;line-height:1.65;margin-bottom:24px}
+.corporate-footer .cf-cta{display:flex;align-items:center;justify-content:space-between;gap:24px;width:fit-content;max-width:100%;background:#cee7b5;color:#15221c;padding:15px 22px;font-size:14px;font-weight:600;border-radius:0;min-height:50px}
+.corporate-footer .cf-cta:hover{background:#e0efcf;color:#15221c;text-decoration:none}
+.corporate-footer .cf-cta span{font-size:22px;font-weight:400;line-height:1}
+.corporate-footer .cf-text-link{display:inline-flex;align-items:center;gap:16px;font-size:13px;min-height:44px;margin-top:8px}
+.corporate-footer .cf-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr .8fr;gap:40px;padding:50px 0 40px}
+.corporate-footer .cf-wordmark{display:inline-block;font-size:25px;letter-spacing:-1.1px;font-weight:700;line-height:1.4;margin-bottom:18px}
+.cf-wordmark span{font-weight:400;color:#b7c2bd}
+.corporate-footer .cf-initiative{font-size:13px;color:#e2e8e2;margin-bottom:18px;line-height:1.65}
+.corporate-footer .cf-identity>p:not(.cf-initiative){max-width:280px;font-size:13px}
+.corporate-footer .cf-column{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:0;width:auto;padding:0;margin:0;border:0;background:none}
+.corporate-footer h3{font:600 12px/1.5 Arial,Helvetica,sans-serif;color:#c8e7a9;letter-spacing:.7px;margin:4px 0 16px}
+.corporate-footer .cf-column a{font:400 13px/1.5 Arial,Helvetica,sans-serif;color:#e2e8e2;padding:10px 0;min-height:40px;display:block;width:auto;white-space:normal}
+.corporate-footer .cf-column a:hover{color:#c8e7a9}
+.corporate-footer .cf-principles{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:20px 0;border-top:1px solid #34413b;border-bottom:1px solid #34413b;font-size:12px;color:#d1d9d3}
+.cf-principles span{display:flex;align-items:center;gap:12px}
+.cf-principles i{font:400 10px/1.5 Arial,Helvetica,sans-serif;letter-spacing:1px;color:#91aa94}
+.corporate-footer .cf-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;padding-top:30px}
+.corporate-footer .cf-copyright p{font-size:11px;line-height:1.8}
+.corporate-footer .cf-copyright p:first-child{color:#e2e8e2;font-size:12px;margin-bottom:5px}
+.corporate-footer .cf-copyright a{font-size:11px;display:inline-flex;align-items:center;min-height:36px}
+.corporate-footer .cf-sources{max-width:490px}
+.corporate-footer .cf-source-label{font-size:9px;font-weight:700;letter-spacing:1.6px;color:#aebfb5;margin-bottom:14px}
+.cf-source-links{display:flex;gap:26px;flex-wrap:wrap}
+.corporate-footer .cf-source-links a{display:flex;align-items:center;gap:10px;font-size:11px;min-height:54px}
+.cf-source-links b{font-weight:400;margin-left:6px;color:#aebfb5}
+.cf-logo-plate{display:flex;align-items:center;justify-content:center;width:102px;height:54px;background:#fff;border:1px solid #e8ebe8;flex-shrink:0;padding:5px}
+.corporate-footer .cf-logo-plate img{display:block;margin:0;border:0;max-width:100%;object-fit:contain;border-radius:0;filter:none;opacity:1}
+.corporate-footer .cf-eu{width:54px;height:36px}
+.corporate-footer .cf-slovenia{width:89px;height:44px}
+.corporate-footer .cf-source-note{font-size:10px;line-height:1.6;color:#aebfb5;margin-top:12px;max-width:450px}
+@media(max-width:1000px){.corporate-footer .cf-grid{grid-template-columns:1.3fr 1fr;gap:30px 48px}.corporate-footer .cf-opening{gap:36px}.corporate-footer .cf-bottom{align-items:flex-start}.cf-source-links{gap:14px}.corporate-footer .cf-sources{max-width:440px}}
+@media(max-width:640px){.corporate-footer .cf-wrap{padding:44px 24px 24px}.corporate-footer .cf-opening{grid-template-columns:1fr;gap:25px;padding-bottom:32px}.corporate-footer h2{font-size:33px;letter-spacing:-1px}.corporate-footer .cf-eyebrow{font-size:9px;margin-bottom:18px}.corporate-footer .cf-invitation{justify-self:start}.corporate-footer .cf-invitation>p{font-size:14px}.corporate-footer .cf-grid{grid-template-columns:1fr 1fr;gap:26px 20px;padding:32px 0}.corporate-footer .cf-identity{grid-column:1/-1;margin-bottom:4px}.corporate-footer .cf-identity>p:not(.cf-initiative){max-width:340px}.corporate-footer .cf-column a{font-size:12px;min-height:44px}.corporate-footer .cf-principles{grid-template-columns:1fr;gap:14px;padding:22px 0}.corporate-footer .cf-bottom{flex-direction:column;gap:24px;padding-top:22px}.corporate-footer .cf-sources{width:100%}.cf-source-links{gap:16px 24px}.corporate-footer .cf-source-links a{flex-direction:column;align-items:flex-start;gap:7px}.corporate-footer .cf-source-note{margin-top:16px}.corporate-footer .cf-wordmark{margin-bottom:14px}.corporate-footer .cf-cta{font-size:13px;padding:14px 18px}}
+@media(prefers-reduced-motion:reduce){.corporate-footer a{transition:none}}
+@media print{footer.corporate-footer{display:none!important}}
+.corporate-footer .cf-principles i{display:inline-block;width:auto;height:auto;border-radius:0;background:none;flex-shrink:0}

@@ -39,7 +39,7 @@ for (const id of [
 }
 const css = (
   await Promise.all(
-    ["globals", "atlas", "journal", "intake"].map((name) =>
+    ["globals", "atlas", "journal", "intake", "footer"].map((name) =>
       read("app/" + name + ".css"),
     ),
   )
@@ -64,7 +64,7 @@ const atlas = await bundle(
   'import {createRoot} from "react-dom/client"; import Page from "./app/page"; createRoot(document.getElementById("root")).render(<Page/>);',
 );
 const intake = await bundle(
-  'import {createRoot} from "react-dom/client"; import {Intake} from "./app/intake"; createRoot(document.getElementById("root")).render(<><header className="standalone-brand">investors.com.tr · Slovenya Brifing Masası</header><main className="shell inner-main"><Intake offline invite="" save={async()=>{}} /></main><footer><div className="shell">Orta Avrupa ve Slovenya Yatırım İnisiyatifi</div></footer></>);',
+  'import {createRoot} from "react-dom/client"; import {Intake} from "./app/intake"; import {CorporateFooter} from "./app/corporate-footer"; createRoot(document.getElementById("root")).render(<><header className="standalone-brand">investors.com.tr · Slovenya Brifing Masası</header><main className="shell inner-main"><Intake offline invite="" save={async()=>{}} /></main><CorporateFooter/></>);',
 );
 await writeFile(
   root + "portable/index.html",

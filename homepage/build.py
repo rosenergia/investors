@@ -93,10 +93,10 @@ def asset_url(filename):
 def shell(title, desc, path, body):
     links='<a href="/genel-bakis/">Genel bakış</a><a href="/#sektorler">Sektörler</a><a href="/#ulkeler">Ülkeler</a><a href="/yayin-ilkeleri/">Yayın ilkeleri</a>'
     return f'''<!doctype html>
-<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)}</title><meta name="description" content="{escape(desc,quote=True)}"><link rel="canonical" href="{BASE}{path}"><meta property="og:title" content="{escape(title,quote=True)}"><meta property="og:image" content="{BASE}/media/harbor.webp"><link rel="icon" href="/globe.svg"><link rel="stylesheet" href="{asset_url('style.css')}"><script defer src="{asset_url('site.js')}"></script></head><body>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)}</title><meta name="description" content="{escape(desc,quote=True)}"><link rel="canonical" href="{BASE}{path}"><meta property="og:title" content="{escape(title,quote=True)}"><meta property="og:image" content="{BASE}/media/harbor.webp"><link rel="icon" href="/globe.svg"><link rel="stylesheet" href="{asset_url('style.css')}"><link rel="stylesheet" href="{asset_url('footer.css')}"><script defer src="{asset_url('site.js')}"></script></head><body>
 <a class="skip" href="#icerik">İçeriğe geç</a><header><div class="mast"><button id="menu" aria-haspopup="dialog" aria-expanded="false" aria-controls="drawer"><span class="hamb" aria-hidden="true"></span>Menü</button>{brand}<a class="desk" href="{DESK}">Slovenya masası <span>↗</span></a></div><nav aria-label="Ana gezinme"><a href="/" {'aria-current="page"' if path=='/' else ''}>Ana sayfa</a>{links}</nav></header>
 {site_menu(path)}
-<main id="icerik">{body}</main><footer><div>{brand}<p>Orta Avrupa ve Slovenya Yatırım İnisiyatifi</p></div><div>{links}<a href="/media/fotograflar.txt">Fotoğraf kredileri</a></div></footer></body></html>'''
+<main id="icerik">{body}</main>{(ROOT / 'footer.html').read_text()}</body></html>'''
 def country_links():
     return ''.join(f'<a href="/ulkeler/{slug}/"><span class="code">{code}</span><span>{name}</span><span class="arrow">→</span></a>' for code,name,slug,*_ in countries)
 cards = ''.join(sector_card(sector) for sector in sector_directory)

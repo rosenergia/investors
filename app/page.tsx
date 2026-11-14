@@ -17,7 +17,7 @@ import { RelationshipMap } from "./relationship-map";
 import { discoveryGuide } from "../lib/discovery";
 import { Discovery } from "./discovery";
 import { Intake, IntakeSummary } from "./intake";
-import { Header, Home, FileChooser, Logo } from "./atlas";
+import { Header, Home, FileChooser } from "./atlas";
 import { BriefFields, BriefReport, PilotFields } from "./project-brief";
 import { atlas } from "../lib/atlas";
 type FileRow = {
@@ -31,6 +31,7 @@ type FileRow = {
   task: string;
   canReview: boolean;
 };
+import { CorporateFooter } from "./corporate-footer";
 import { CompanyBrief } from "./company-brief";
 
 type View =
@@ -1217,15 +1218,7 @@ export default function Page() {
           </>
         )}
       </main>
-      <footer>
-        <div className="shell">
-          <div className="foot-brand">
-            <Logo />
-            <strong>investors.com.tr</strong>
-          </div>
-          <span>Orta Avrupa ve Slovenya Yatırım İnisiyatifi</span>
-        </div>
-      </footer>
+      <CorporateFooter />
     </>
   );
 }
