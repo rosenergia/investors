@@ -4,7 +4,7 @@ const search = document.querySelector('#menu-search');
 const categories = [...drawer.querySelectorAll('[data-group]')];
 const results = drawer.querySelector('.menu-results');
 const empty = drawer.querySelector('#menu-empty');
-let selected = 'sektorler';
+let selected = 'yayinlar';
 
 function normalize(text) {
   return text.toLocaleLowerCase('tr').replaceAll('ı', 'i').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
@@ -54,7 +54,7 @@ for (const button of categories) {
 }
 search.addEventListener('input', filterMenu);
 trigger.addEventListener('click', () => {
-  selected = 'sektorler';
+  selected = 'yayinlar';
   search.value = '';
   filterMenu();
   drawer.showModal();
@@ -65,3 +65,24 @@ drawer.addEventListener('close', () => trigger.setAttribute('aria-expanded', 'fa
 drawer.addEventListener('click', event => {
   if (event.target.closest('a') || (event.target === drawer && event.clientX >= drawer.getBoundingClientRect().right)) drawer.close();
 });
+
+
+const insightSearch = document.querySelector('#insight-search');
+if (insightSearch) {
+  const topicFilter = document.querySelector('#insight-topic');
+  const articles = [...document.querySelectorAll('#insight-results .insight-card')];
+  function filterInsights() {
+    const query = normalize(insightSearch.value.trim());
+    let count = 0;
+    for (const article of articles) {
+      const matches = normalize(article.textContent).includes(query)
+        && (!topicFilter.value || article.dataset.topic === topicFilter.value);
+      article.hidden = !matches;
+      if (matches) count++;
+    }
+    document.querySelector('#insight-count').textContent = count + ' yazı';
+    document.querySelector('#insight-empty').hidden = count > 0;
+  }
+  insightSearch.addEventListener('input', filterInsights);
+  topicFilter.addEventListener('change', filterInsights);
+}

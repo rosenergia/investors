@@ -1,0 +1,41 @@
+[
+ {
+  "slug":"avrupada-buyume-ve-nakit-akisi","topic":"Finansman","image":"harbor",
+  "title":"Avrupa’da büyürken nakit akışı neden belirleyici?",
+  "summary":"Yeni siparişin finansman ihtiyacı, tedarikçiye ödeme ile müşteriden tahsilat arasındaki sürede ortaya çıkıyor.",
+  "sections":[
+   ["Genel bakış","Bir işletmenin Avrupa’da satışa başlaması, daha uzun ödeme vadeleri veya teslimata kadar finanse edilmesi gereken stokla karşılaşmasına yol açabilir. Şirket kuruluşu, siparişin finansmanını değerlendiren bankanın incelemesinin bir parçasıdır. Sloven Girişim Fonu’nun KOBİ kredi garantileri, ilgili çağrı koşullarını ve bankanın olumlu kredi kararını içerir. Bu mekanizma, belirli işletmeler için finansmana erişimi destekleyebilecek bir araçtır."],
+   ["Kararı değiştiren koşullar","Avans oranı, tedarikçi vadesi ve müşterinin ödeme tarihi birlikte ele alındığında siparişin en yüksek nakit açığı hesaplanabilir. Borçlanmanın maliyeti faizle birlikte komisyonu, teminatı ve olası kur riskini de içerir. Yeni iştirakin satış geçmişi sınırlıysa bankanın istediği ek kanıt veya ana şirket desteği önem kazanabilir."],
+   ["Koşullara bağlı öngörü","Düzenli tahsilat ve tekrar siparişler oluşursa finansman ihtiyacını planlamak kolaylaşabilir. Müşteri vadeleri uzarken tedarikçi ödemeleri sabit kalırsa, aynı satış hacmi daha fazla işletme sermayesi gerektirir. Satış büyümesinin ekonomik katkısı, finansman ve operasyon giderleriyle birlikte değerlendirilmelidir."],
+   ["İzlenecek göstergeler","Ortalama tahsilat süresi, sipariş avansı, stokta bekleme, en yüksek nakit açığı ve yazılı banka teklifinin toplam maliyeti. İlk değerlendirme, bir ürün ve bir teslimat üzerinden hazırlanabilir."]
+  ],
+  "sources":[["Sloven Girişim Fonu · Kredi garantileri","https://www.podjetniskisklad.si/en/sef-role/financial-incentives/guarantees/"],["Slovenya Merkez Bankası · SISBIZ","https://www.bsi.si/en/central-credit-register/sisbiz"]],
+  "related":"/ulkeler/slovenya/","relatedLabel":"Slovenya ülke brifingi"
+ },
+ {
+  "slug":"bolgesel-stok-ve-dagitim","topic":"Tedarik zinciri","image":"gida",
+  "title":"Bölgesel stok hangi koşullarda değer yaratır?",
+  "summary":"Teslimat hızının ticari katkısını depolama, elleçleme ve stoka bağlanan para ile birlikte değerlendirmek gerekiyor.",
+  "sections":[
+   ["Genel bakış","Koper Limanı’nın yayımladığı demir yolu bağlantıları, Slovenya’yı Avusturya ve Macaristan dâhil bölgedeki merkezlere bağlıyor. Bu ağ, bir dağıtım modelinde incelenebilecek güzergâhlar sunuyor. Bir işletmenin tercih edeceği rota ise ürünün hacmine, teslim adresine, taşıma koşullarına ve sipariş sıklığına bağlı."],
+   ["Kararı değiştiren koşullar","Acil yedek parça ile düzenli tam parti sevki farklı hizmet ihtiyaçları taşır. Müşteriye yakın stok, kısa süre içinde yeniden teslimat yapılmasına yardımcı olabilir. Bunun karşılığında depo, stok finansmanı, elleçleme ve iade süreçleri için gider oluşur. Soğuk zincirde sıcaklık takibi ve kabulde kalan raf ömrü de değerlendirmeye girer."],
+   ["Koşullara bağlı öngörü","Siparişler sıklaşır ve alıcı kısa teslim süresine ticari değer verirse bölgesel stokun katkısı artabilir. Talep dalgalandığında stokta bekleme ve değer kaybı maliyeti yükselir. Modelin sonucu, aynı miktar ve teslim adresi için doğrudan sevk ile ara depolu teslimatın ölçülmesine bağlıdır."],
+   ["İzlenecek göstergeler","Gerçekleşen teslim süresi, stok devir hızı, sağlam teslim edilen ürün başına maliyet, iade oranı ve müşterinin tekrar siparişi. Güzergâh bilgileri güncel taşıyıcı teklifi ve kapasite teyidiyle birlikte okunmalıdır."]
+  ],
+  "sources":[["Koper Limanı · Demir yolu bağlantıları","https://www.luka-kp.si/en/services-terminals/port-connections/railway-connections/"]],
+  "related":"/sektorler/gida-ve-soguk-zincir/","relatedLabel":"Gıda ve soğuk zincir dosyası"
+ },
+ {
+  "slug":"urun-uygunlugu-ve-pazara-giris","topic":"Üretim","image":"celik",
+  "title":"Ürün uygunluğu, Avrupa pazarına girişte nasıl ele alınmalı?",
+  "summary":"Ürün, üretim tesisi ve firmanın üstlendiği rol, incelenecek teknik yükümlülüklerin kapsamını belirliyor.",
+  "sections":[
+   ["Genel bakış","AB’de CE işareti, ilgili mevzuatın kapsamına giren ürünlerin uygunluk süreciyle ilişkilidir. Üreticinin sorumluluğu, ürüne uygulanacak şartların belirlenmesini, gerekli değerlendirmeyi ve ilgili belgelerin hazırlanmasını kapsar. Uygulanacak prosedüre göre bağımsız bir kuruluşun katılımı gerekebilir. Ürünün kullanım amacı ve teknik özellikleri bu incelemenin başlangıç noktasıdır."],
+   ["Kararı değiştiren koşullar","Şirketin yönetim sistemi, üretim tesisinin kontrol kayıtları ve ürünün uygunluk belgeleri farklı kapsamlar taşır. Türkiye ve Slovenya’daki tesislerin birlikte çalıştığı bir modelde, üretim aşamaları ve her kuruluşun sorumluluğu açıkça tanımlanmalıdır. Teknik dosyanın güncelliği, malzeme izlenebilirliği ve alıcının kabul koşulları ticari değerlendirmeyi etkiler."],
+   ["Koşullara bağlı öngörü","Belgelerin ve üretim kayıtlarının düzenli tutulması, bunları arayan alıcıların tedarikçi değerlendirmesini destekleyebilir. Test, denetim ve kayıt süreçleri maliyet ve zaman gerektirir. Yerel üretim yatırımının ekonomik sonucu, bu yükümlülüklerle birlikte doğrulanmış talep ve kapasite kullanımına bağlıdır."],
+   ["İzlenecek göstergeler","Ürüne uygulanacak kurallar, gerekli değerlendirme süresi, test ve denetim maliyeti, ilk partide uygunsuzluk oranı ve müşteri kabulü. Bir ürün çizimi ve hedef kullanım üzerinden hazırlanan dosya, kapsamın belirlenmesini kolaylaştırır."]
+  ],
+  "sources":[["Avrupa Birliği · CE işareti ve üretici yükümlülükleri","https://europa.eu/youreurope/business/product-rules-compliance/general-product-compliance/ce-marking/index_en.htm"]],
+  "related":"/sektorler/insaat-ve-renovasyon/","relatedLabel":"İnşaat ve renovasyon dosyası"
+ }
+]

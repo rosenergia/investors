@@ -19,6 +19,8 @@ countries = [
     ('CZ','Çekya','cekya','Sanayi alıcısıyla kabul testi','Bir saha denemesinde ürünün kabul ölçütünü, teknik sorumluyu ve sonraki siparişin koşullarını baştan belirleyin.',None),
     ('PL','Polonya','polonya','Dağıtımda birim maliyet','Depo, dağıtım ve satış sonrası işlemlerin sipariş başına katkıyı nasıl değiştirdiğini tek bir ürün ailesinde ölçün.',None),
 ]
+insights = json.loads((ROOT / 'insights.json').read_text())
+
 sector_directory = json.loads((ROOT / 'sectors.json').read_text())
 
 def sector_url(sector):
@@ -52,6 +54,11 @@ def menu_item(url, title, caption, *, image=None, code=None, current=False):
 
 def site_menu(path):
     groups = {
+        'yayinlar': ('Genel bakış', [
+            menu_item('/genel-bakis/', 'Tüm genel bakış yazıları', 'Ücretsiz yayınlar', code='↗'),
+            *[menu_item('/genel-bakis/' + item['slug'] + '/', item['title'], item['topic'], image=item['image']) for item in insights],
+            menu_item('/yayin-ilkeleri/', 'Yayın ve erişim ilkeleri', 'Hakkımızda', code='i'),
+        ]),
         'ulkeler': ('Ülkeler', [menu_item(f'/ulkeler/{slug}/', name, 'Ülke brifingi', code=code,
                                            current=path == f'/ulkeler/{slug}/')
                                 for code, name, slug, *_ in countries]),
@@ -66,7 +73,7 @@ def site_menu(path):
     buttons = []
     sections = []
     for key, (label, items) in groups.items():
-        active = key == 'sektorler'
+        active = key == 'yayinlar'
         buttons.append(f'<button type="button" data-group="{key}" aria-controls="liste-{key}" '
                        f'aria-pressed="{str(active).lower()}">{label}</button>')
         sections.append(f'<section id="liste-{key}" aria-label="{label}"'
@@ -84,7 +91,7 @@ def asset_url(filename):
     return f'/{filename}?v={digest}'
 
 def shell(title, desc, path, body):
-    links='<a href="/#ulkeler">Ülkeler</a><a href="/#sektorler">Sektörler</a><a href="/#yaklasim">Hakkımızda</a>'
+    links='<a href="/genel-bakis/">Genel bakış</a><a href="/#sektorler">Sektörler</a><a href="/#ulkeler">Ülkeler</a><a href="/yayin-ilkeleri/">Yayın ilkeleri</a>'
     return f'''<!doctype html>
 <html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)}</title><meta name="description" content="{escape(desc,quote=True)}"><link rel="canonical" href="{BASE}{path}"><meta property="og:title" content="{escape(title,quote=True)}"><meta property="og:image" content="{BASE}/media/harbor.webp"><link rel="icon" href="/globe.svg"><link rel="stylesheet" href="{asset_url('style.css')}"><script defer src="{asset_url('site.js')}"></script></head><body>
 <a class="skip" href="#icerik">İçeriğe geç</a><header><div class="mast"><button id="menu" aria-haspopup="dialog" aria-expanded="false" aria-controls="drawer"><span class="hamb" aria-hidden="true"></span>Menü</button>{brand}<a class="desk" href="{DESK}">Slovenya masası <span>↗</span></a></div><nav aria-label="Ana gezinme"><a href="/" {'aria-current="page"' if path=='/' else ''}>Ana sayfa</a>{links}</nav></header>
@@ -93,11 +100,20 @@ def shell(title, desc, path, body):
 def country_links():
     return ''.join(f'<a href="/ulkeler/{slug}/"><span class="code">{code}</span><span>{name}</span><span class="arrow">→</span></a>' for code,name,slug,*_ in countries)
 cards = ''.join(sector_card(sector) for sector in sector_directory)
-home=f'''<section class="hero"><div class="hero-copy"><p class="eyebrow"><i></i> Avrupa brifingleri</p><h1>Avrupa’da<br>iş geliştirmek.</h1><p>Üreticiler için ülke ve sektör brifingleri. İlk alıcıdan yerel dağıtıma, Avrupa’da büyümenin ticari kararlarını inceleyin.</p><a class="line" href="#ulkeler">Ülkeleri keşfet <b>↓</b></a></div><figure><img src="/media/harbor.webp" fetchpriority="high" alt="Konteyner terminalinde yükleme vinçleri ve gemilere havadan bakış"><figcaption><span>Dosya odağı</span> Avrupa’da dağıtım</figcaption></figure></section>
+def insight_cards():
+    return ''.join(f'<article class="insight-card" data-topic="{escape(item["topic"])}">'
+                   f'<a href="/genel-bakis/{item["slug"]}/"><img loading="lazy" src="/media/{item["image"]}.webp" alt="">'
+                   f'<div><small>{escape(item["topic"])}</small><h3>{escape(item["title"])}</h3>'
+                   f'<p>{escape(item["summary"])}</p><span class="read-link">Genel bakışı oku →</span></div></a></article>'
+                   for item in insights)
+
+home=f'''<section class="hero"><div class="hero-copy"><p class="eyebrow"><i></i> Ücretsiz genel bakış ve analiz</p><h1>Avrupa’yı anlamak.<br>Kararları<br>hazırlamak.</h1><p>Üretim, finansman ve ticaret üzerine kaynaklı değerlendirmeler. Fırsatları, maliyetleri ve belirsizlikleri birlikte inceleyin.</p><a class="line" href="/genel-bakis/">Genel bakış yazılarını keşfet <b>↓</b></a></div><figure><img src="/media/harbor.webp" fetchpriority="high" alt="Konteyner terminalinde yükleme vinçleri ve gemilere havadan bakış"><figcaption><span>Dosya odağı</span> Avrupa’da dağıtım</figcaption></figure></section>
+<div class="access-note">Genel bakış yazıları ve brifingler ücretsiz, üyelik gerektirmeden okunabilir. <a href="/yayin-ilkeleri/">Yayın yaklaşımımız ↗</a></div>
+<section class="section insights" id="genel-bakis"><div class="sectionhead"><h2>Genel bakış</h2><p>Bir ticari kararın arkasındaki koşulları ve izlenecek göstergeleri okuyun.</p></div><div class="insight-grid">{insight_cards()}</div><a class="line" href="/genel-bakis/">Tüm yazılar <b>→</b></a></section>
 <section class="section countries" id="ulkeler"><div class="sectionhead"><h2>Ülke brifingleri</h2><p>Hedef pazarı seçin. Alıcı profillerini ve sektörünüze uygun ilk saha denemesini inceleyin.</p></div><div class="countrygrid"><article class="featured"><small><i></i> Yayındaki ülke masası</small><div><h3>Slovenya</h3><p>Adriyatik’ten Orta Avrupa’ya uzanan dağıtım, üretim ve servis kararları.</p></div><a class="line" href="{DESK}">Slovenya masasına git <b>↗</b></a></article><div class="directory">{country_links()}</div></div></section>
 <section class="section sectors" id="sektorler"><div class="sectionhead"><h2>Sektör brifingleri</h2><p>Sektörünüzü veya faaliyet alanınızı seçerek teklif kapsamını, alıcı beklentilerini ve teslim koşullarını inceleyin.</p></div><div class="stories">{cards}</div></section>
-<section class="section about" id="yaklasim"><div><small>investors.com.tr hakkında</small><h2>Bir pazar kararı<br>nasıl hazırlanır?</h2></div><div><p>Bir ülkeye girmeden önce ilk müşterinin kim olabileceğini, neyi satın alacağını ve söz verdiğiniz teslimatın maliyetini bilmek gerekir. Brifinglerimiz bu üç kararı alıcı profilleri, saha denemeleri ve ölçülebilir sonuçlarla ele alıyor.</p><a class="line" href="{DESK}#basvuru">Firmanızı Slovenya masasına tanıtın <b>↗</b></a></div></section>'''
-(OUT/'index.html').write_text(shell('investors.com.tr | Avrupa ülke ve sektör brifingleri','Avrupa’da iş geliştiren üreticiler için sekiz ülke, altı sektör ve sahada sınanabilecek ticari teklifler.','/',home))
+<section class="section about" id="yaklasim"><div><small>investors.com.tr hakkında</small><h2>Bilgiye açık erişim.<br>Şeffaf değerlendirme.</h2></div><div><p>investors.com.tr, Avrupa’da iş geliştiren firmalar için ücretsiz genel bakış yazıları ve brifingler yayımlar. Kaynakları, değerlendirme tarihini ve öngörülerin hangi koşullara bağlı olduğunu görünür kılar. Okuyucu kendi pazar ve şirket verileriyle değerlendirmeyi ilerletebilir.</p><a class="line" href="/yayin-ilkeleri/">Yayın ve erişim ilkelerini okuyun <b>↗</b></a></div></section>'''
+(OUT/'index.html').write_text(shell('investors.com.tr | Avrupa üzerine ücretsiz analiz ve brifingler','Avrupa’da iş geliştiren firmalar için ücretsiz genel bakış yazıları, sektör dosyaları ve ülke brifingleri.','/',home))
 for code,name,slug,focus,intro,desk in countries:
     sections=[]
     for key,sector in [('celik','Yapısal çelik'),('enerji','Enerji'),('gida','Gıda ve soğuk zincir'),('makine','Makine'),('hvac','İklimlendirme'),('tekstil','Tekstil')]:
@@ -123,3 +139,39 @@ for sector in sector_directory:
     folder = OUT / path.strip('/')
     folder.mkdir(parents=True, exist_ok=True)
     (folder / 'index.html').write_text(shell(f'{name} | investors.com.tr', intro, path, body))
+
+def publish(path, title, desc, content):
+    folder = OUT / path.strip('/')
+    folder.mkdir(parents=True, exist_ok=True)
+    (folder / 'index.html').write_text(shell(title + ' | investors.com.tr', desc, path, content))
+
+filters = ''.join(f'<option>{escape(topic)}</option>' for topic in dict.fromkeys(item['topic'] for item in insights))
+publish('/genel-bakis/', 'Genel bakış', 'Ücretsiz ve açık erişimli finansman, üretim ve tedarik zinciri değerlendirmeleri.',
+    f'''<section class="countryhero"><small>investors.com.tr / Yayınlar</small><h1>Genel bakış</h1>
+    <p>Avrupa’da iş geliştirmeyi etkileyen koşullar, olası gelişmeler ve izlenecek göstergeler.</p></section>
+    <section class="section"><p class="library-access">Yazıların tamamı ücretsiz ve üyelik gerektirmeden okunabilir.</p>
+    <div class="library-tools"><label>Yazılarda ara<input id="insight-search" type="search" placeholder="Nakit akışı, stok, üretim…" autocomplete="off"></label>
+    <label>Konu<select id="insight-topic" aria-label="Konu"><option value="">Tüm konular</option>{filters}</select></label></div>
+    <p id="insight-count" role="status">3 yazı</p><div class="insight-grid" id="insight-results">{insight_cards()}</div>
+    <p id="insight-empty" hidden>Bu aramaya uygun yazı bulunamadı. Başka bir kelime deneyebilirsiniz.</p></section>''')
+for item in insights:
+    content = ''.join(f'<section id="bolum-{index}"><h2>{escape(title)}</h2><p>{escape(text)}</p></section>' for index,(title,text) in enumerate(item['sections']))
+    anchors = ''.join(f'<a href="#bolum-{index}">{escape(title)}</a>' for index,(title,_) in enumerate(item['sections']))
+    sources = ''.join(f'<li><a href="{escape(url, quote=True)}" target="_blank" rel="noreferrer">{escape(label)} ↗</a></li>' for label,url in item['sources'])
+    publish('/genel-bakis/' + item['slug'] + '/', item['title'], item['summary'],
+        f'''<section class="article-heading"><a href="/genel-bakis/">← Genel bakış</a><p class="eyebrow">{escape(item['topic'])}</p>
+        <h1>{escape(item['title'])}</h1><p class="article-deck">{escape(item['summary'])}</p>
+        <p class="article-meta">Hazırlayan investors.com.tr · <time datetime="2026-11-14">14 Kasım 2026</time> · Açık erişim</p></section>
+        <div class="article-layout section"><aside aria-label="Yazının bölümleri">{anchors}<a href="#kaynaklar">Kaynaklar</a></aside>
+        <article class="article-copy">{content}<p class="editorial-note">Koşullara bağlı öngörü, investors.com.tr editoryal değerlendirmesidir. Kaynaklar aşağıda yer alır.</p>
+        <section id="kaynaklar"><h2>Kaynaklar</h2><ul>{sources}</ul></section>
+        <a class="line" href="{item['related']}">{escape(item['relatedLabel'])} →</a></article></div>''')
+publish('/yayin-ilkeleri/', 'Yayın ve erişim ilkeleri', 'Ücretsiz bilgiye erişim, kaynaklar, öngörüler ve firmaya özel çalışmalar için yaklaşımımız.',
+    '''<section class="countryhero"><small>investors.com.tr hakkında</small><h1>Yayın ve erişim ilkeleri</h1><p>Avrupa’da iş geliştiren firmalar için bilginin erişilebilir ve değerlendirmenin izlenebilir olması.</p></section>
+    <article class="section policy-copy">
+    <section><h2>Ücretsiz bilgiye erişim</h2><p>Genel bakış yazıları, sektör dosyaları ve ülke brifingleri ücretsiz olarak okunabilir. Bu yayınlara erişim üyelik veya firma başvurusu gerektirmez. Açık bilgiye erişim, yayın yaklaşımımızın temelidir.</p></section>
+    <section><h2>Kaynak ve değerlendirme</h2><p>Genel bakış yazılarında resmî kaynak bağlantıları, hazırlayan bilgisi ve yayın tarihi yer alır. Öngörüler, gerçekleşmelerini etkileyen koşullarla birlikte sunulur. Ülke ve sektör brifinglerindeki örnek alıcı profilleri ve saha denemeleri, firmanın kendi verileriyle sınayabileceği çalışma çerçeveleridir.</p></section>
+    <section><h2>İçerik nasıl okunmalı?</h2><p>Genel değerlendirmeler, belirli bir firmaya ilişkin inceleme için başlangıç sağlar. Bir finansman, sigorta veya ihale kararında ilgili ürünün güncel koşulları ve somut işin belgeleri belirleyicidir. Kaynakların yayın tarihleri ve sonraki değişiklikler birlikte değerlendirilmelidir.</p></section>
+    <section><h2>Firmaya özel çalışmalar</h2><p>İleride firmanın kendi verileriyle hazırlanacak fizibilite, pazar araştırması veya proje değerlendirmesi gibi çalışmalar ücretli olarak sunulabilir. Böyle bir çalışmada kapsam, teslim edilecek çıktı, hizmeti sunacak taraf ve ücret, başlamadan önce yazılı olarak açıklanır ve firmanın onayına sunulur. Genel yayınlara ücretsiz erişim sürer.</p></section>
+    <section><h2>Yayıncı</h2><p>investors.com.tr, Orta Avrupa ve Slovenya Yatırım İnisiyatifi kapsamında hazırlanan bir bilgi ve brifing platformudur. Ülke dosyalarına ve Slovenya Brifing Masası’na site menüsünden ulaşabilirsiniz.</p></section>
+    <a class="line" href="/genel-bakis/">Ücretsiz yayınları inceleyin →</a></article>''')
