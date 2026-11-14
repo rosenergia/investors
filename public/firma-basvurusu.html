@@ -2691,6 +2691,13 @@ footer .foot-brand {
 .company-sources {display:flex;flex-wrap:wrap;gap:8px 18px}
 .company-sources a {font-size:14px;text-underline-offset:3px;color:#27523e}
 
+/* Cross-site navigation stays available on desktop and mobile. */
+a.journal-brand {text-decoration:none;min-height:44px}
+a.journal-brand:hover {color:#cee7b5}
+.directory-home-link {display:flex;align-items:center;gap:9px;padding:13px 24px;min-height:48px;flex-shrink:0;color:#e4efdf;text-decoration:none;font-size:14px;border-bottom:1px solid #333;background:#111a17}
+.directory-home-link:hover {background:#1b2923;color:white}
+a.journal-brand:focus-visible,.directory-home-link:focus-visible {outline:2px solid #cee7b5;outline-offset:-3px}
+
 .intake-wrap {
   width: min(100%, 970px);
   margin-inline: auto;

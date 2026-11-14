@@ -102,16 +102,17 @@ export function Header({
           </span>
           <span>Menü ve arama</span>
         </button>
-        <button
+        <a
           className="journal-brand"
-          aria-label="investors.com.tr Slovenya ana sayfa"
-          onClick={() => navigate("home")}
+          href="https://investors.com.tr/"
+          aria-label="investors.com.tr ana sayfa"
+          title="investors.com.tr ana sayfasına dön"
         >
           <Logo />
           <span>
             investors.com.tr<small>SLOVENYA</small>
           </span>
-        </button>
+        </a>
         <div className="journal-actions">
           <button className="round blue" onClick={() => navigate("intake")}>
             <Plus size={15} />
@@ -167,6 +168,10 @@ export function Header({
               onChange={(e) => setQuery(e.target.value)}
             />
           </div>
+          <a className="directory-home-link" href="https://investors.com.tr/">
+            <ChevronLeft size={18} aria-hidden="true" />
+            investors.com.tr ana sayfa
+          </a>
           <div className="directory-body">
             <div className="dir-cats">
               {catalogues.map((c, i) => (
