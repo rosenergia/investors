@@ -3,6 +3,130 @@ import { useState } from "react";
 import { photograph } from "../lib/editorial";
 
 const chapters = [
+{
+  "topic": "EPC",
+  "photo": "celik",
+  "scenario": "Bir tesis yenilemesinde hangi işi üstlenebilirsiniz?",
+  "title": "Ana yüklenici, konsorsiyum veya iş paketi",
+  "steps": [
+    [
+      "İlan",
+      "TED’de hedef ülke ve iş türüyle bir ilan seçin. Teklif tarihini, işin lotlara ayrılıp ayrılmadığını ve hangi referansların kabul edildiğini kaydedin."
+    ],
+    [
+      "Sorumluluk",
+      "Çelik montajı paketinde çizim ve saha kabulü kime ait? EPC teklifinde mühendislik, satın alma ve yapımın yanı sıra performans testini ve gecikme yükünü de sözleşmede okuyun."
+    ],
+    [
+      "Teklif",
+      "İş programını teminat ve hakediş takvimiyle yan yana koyun. Yerel ortağın ekibi, referansı ve üstleneceği iş için yazılı taahhüt alın."
+    ]
+  ],
+  "body": "Örnek bir Avusturya tesis yenilemesinde Slovenya ekibi keşif ve saha koordinasyonunu, Türkiye tesisi çelik imalatını üstlenebilir. Ana yüklenici teklifinde arayüzleri, alt yüklenici performansını ve işverenin kabul testlerini yönetebilecek kapasite gerekir. İlanı açıp teknik referans, mali yeterlik ve teminat şartlarını teklif verecek tüzel kişi adına inceleyin.",
+  "action": "Karşılanabilen yeterlik şartları, açıkta kalan sorumluluklar ve son hakedişe kadar gereken nakit.",
+  "outlook": "Ekip montajda deneyimli fakat tasarım ve devreye almada referansı sınırlıysa ilk sözleşmeyi belirli bir iş paketine indirmek daha uygulanabilir olabilir. Ana yükleniciliğe geçişi tamamlanan işin kabul tutanağı ve proje marjıyla değerlendirin.",
+  "refs": [
+    [
+      "Your Europe · Kamu ihalesinde teklif kuralları",
+      "https://europa.eu/youreurope/business/selling-in-eu/public-contracts/public-tendering-rules/index_en.htm"
+    ],
+    [
+      "TED · Avrupa ihale ilanları",
+      "https://ted.europa.eu/en/"
+    ]
+  ]
+},
+{
+  "topic": "Menşe",
+  "photo": "makine",
+  "scenario": "Alıcıya üretimin nerede yapıldığını nasıl gösterirsiniz?",
+  "title": "Made in Slovenia ve Made in EU",
+  "steps": [
+    [
+      "Ürün",
+      "Bir ürün kodu ve satış ülkesi seçin. Alıcının istediği menşe ifadesini ve dayandığı şartı yazılı alın."
+    ],
+    [
+      "İşlem",
+      "Türkiye’de ve Slovenya’da yapılan işlemleri, girdilerin menşeini ve her tesisin üretim kayıtlarını eşleştirin."
+    ],
+    [
+      "Beyan",
+      "Ürüne özgü menşe kuralını ve hedef pazardaki etiketleme şartını kontrol edin. Belirsizlik varsa beyanı kullanmadan önce gümrük idaresinden görüş alın."
+    ]
+  ],
+  "body": "Slovenya’daki gerçek üretimi alıcıya gösterebilmek marka güvenine katkı sağlayabilir. “Made in Slovenia” ülkeyi, “Made in EU” bölgeyi ifade eder. Birden fazla ülkede üretimde gümrük menşei için ürüne uygulanacak kural ve son esaslı işleme belirleyicidir. Şirket adresi, yeniden ambalajlama veya CE belgesi tek başına bu ifadeleri haklı çıkarmaz.",
+  "action": "Bir parti için girdi faturaları, üretim rotası, iş emirleri, ürün sınıflandırması ve kullanılacak etiketin dayanağı.",
+  "outlook": "Alıcı tesis denetimine, izlenebilirliğe ve yakın servise değer veriyorsa belgelenmiş yerel üretim tercih sebebi olabilir. Fiyat primi varsayımını aynı teknik şartnameye verilmiş iki yazılı teklifle sınayın.",
+  "refs": [
+    [
+      "Avrupa Komisyonu · Tercihli olmayan menşe",
+      "https://taxation-customs.ec.europa.eu/customs/rules-origin-goods/non-preferential-rules-origin_en"
+    ]
+  ]
+},
+{
+  "topic": "İş güvenliği",
+  "photo": "enerji",
+  "scenario": "Şantiyeye ekip göndermeden hangi koşullar kapanmalı?",
+  "title": "Saha güvenliği ve sınır ötesi çalışma",
+  "steps": [
+    [
+      "Keşif",
+      "Çalışan tesiste montaj için duruş penceresini, kaldırma alanını ve komşu ekiplerin işlerini saha sorumlusuyla belirleyin."
+    ],
+    [
+      "Hazırlık",
+      "Risk değerlendirmesini, gerekli eğitimi ve ekipman kontrollerini görev bazında kayda alın."
+    ],
+    [
+      "Saha kabulü",
+      "İşe başlama iznini kimin vereceğini ve tehlike halinde işi kimin durduracağını vardiya başlamadan netleştirin."
+    ]
+  ],
+  "body": "Slovenya’da işverenin güvenli çalışma koşullarını sağlama yükümlülüğü vardır. Slovenya merkezli ekip başka bir ülkede çalışacaksa o şantiyenin kuralları ile geçici görevlendirme, çalışma izni ve mesleki yeterlik gerekleri ayrıca incelenir. Planlama, kazayı önlemenin yanı sıra bekleme ve yeniden mobilizasyon maliyetini görünür kılar.",
+  "action": "Saha ülkesindeki kayıtlar, göreve uygun eğitim, risk değerlendirmesi ve işverenle imzalı saha teslimi.",
+  "outlook": "Bir vardiyalık keşif sırasında işin güvenli yürütülemeyeceği görülürse takvim ve fiyat yeniden ele alınmalıdır. Sözleşme öncesinde bunu görmek, firmanın taşıyacağı riski daha öngörülebilir kılar.",
+  "refs": [
+    [
+      "Slovenya SPOT · İşverenin iş güvenliği sorumlulukları",
+      "https://spot.gov.si/en/info/safety-at-work"
+    ],
+    [
+      "Your Europe · Geçici görevlendirme",
+      "https://europa.eu/youreurope/business/human-resources/posted-workers/posting-staff-abroad/index_en.htm"
+    ]
+  ]
+},
+{
+  "topic": "Alacaklar",
+  "photo": "tekstil",
+  "scenario": "Vadeli satışta ne kadarlık alacak açıkta kalıyor?",
+  "title": "Ticari alacağı ve işletme sermayesini korumak",
+  "steps": [
+    [
+      "Alıcı limiti",
+      "Alıcının sözleşmedeki tüzel kişiliğini ve sigortacının yazılı limitini ilk sevkten önce eşleştirin."
+    ],
+    [
+      "Teslim",
+      "Avansı, sevk belgesini, imzalı kabulü ve fatura vadesini tek sipariş dosyasında toplayın."
+    ],
+    [
+      "Gecikme",
+      "Ödeme geciktiğinde bildirim süresini kontrol edin. Yeni sevkiyatın açık bakiyeyi nasıl değiştireceğini hesaplayın."
+    ]
+  ],
+  "body": "Örneğin 100.000 avroluk siparişte 30.000 avro avans alındığında teslimden sonra 70.000 avro tahsil edilecektir. Alıcı için yazılı sigorta limiti 50.000 avroysa en az 20.000 avro limit dışında kalır. Poliçedeki tazmin oranı, muafiyet, istisnalar ve bildirim koşulları fiilî korumayı ayrıca etkiler.",
+  "action": "Alıcıya göre açık bakiye, limit dışı tutar, ihtilaflı faturalar ve bir ay gecikmeye yetecek nakit.",
+  "outlook": "Düzenli tahsilat ve belgeli teslim geçmişi bankayla kredi görüşmesini destekleyebilir. Sigorta tazminatı beklenirken ücret ve tedarikçi ödemeleri sürdüğünden finansman planında bu aralığı da karşılayın.",
+  "refs": [
+    [
+      "SID Bank · İhracat alacaklarının sigortalanması",
+      "https://www.sid.si/en/insurance/export-and-pre-export-credit-insurance"
+    ]
+  ]
+},
   {
     topic: "Finansman",
     scenario: "Kredi erişimini şirketin nakit akışı belirliyor",
@@ -197,7 +321,7 @@ export function CompanyBrief() {
         <div className="venture-reading" key={chapter.title}>
           <div><h3>Mevcut durum</h3><p>{chapter.body}</p></div>
           <aside><h3>İzlenecek göstergeler</h3><p>{chapter.action}</p></aside>
-          <div className="venture-outlook"><h3>Koşullara bağlı öngörü</h3><p>{chapter.outlook}</p><small>investors.com.tr editoryal değerlendirmesi · 14 Kasım 2026</small></div>
+          <div className="venture-outlook"><h3>Koşullara bağlı öngörü</h3><p>{chapter.outlook}</p><small>investors.com.tr editoryal değerlendirmesi · {topic < 4 ? "18 Kasım 2026" : "14 Kasım 2026"}</small></div>
           <div className="venture-refs"><h3>Resmî kaynaklar</h3>
             {chapter.refs.map(([label,url]) => <a key={url} href={url} target="_blank" rel="noreferrer">{label} ↗</a>)}
           </div>

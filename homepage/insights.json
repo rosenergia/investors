@@ -1,5 +1,60 @@
 [
  {
+  "slug": "slovenya-merkezli-avrupa-projeleri",
+  "topic": "Avrupa projeleri",
+  "date": "2026-11-18",
+  "dateLabel": "18 Kasım 2026",
+  "image": "celik",
+  "title": "Bir Türk üretici Avusturya’daki ilk projesini Slovenya’dan yönetebilir mi?",
+  "summary": "Bir tesis yenilemesi örneğinde doğrudan ihracatı, Slovenya’dan saha hizmetini ve ana yükleniciliği aynı teslim koşullarıyla karşılaştırıyoruz.",
+  "sections": [
+    [
+      "Neden Slovenya?",
+      "İlk ülke masamızı Slovenya’da konumlandırdık. Koper’in Graz ve Budapeşte ile demir yolu bağlantıları var. Örneğin Avusturya’daki bir tesisin yenilenmesinde Türkiye’de üretilen çeliğin sevkiyle Slovenya’dan yürütülen keşif, montaj ve garanti hizmeti aynı teklifte buluşabilir. Tek seferlik bir işte yerel ekip giderini karşılayacak sipariş hacmi oluşmayabilir."
+    ],
+    [
+      "İhale ilanından iş paketine",
+      "Örnek bir Avusturya tesis yenilemesinde Slovenya ekibi keşif ve saha koordinasyonunu, Türkiye tesisi çelik imalatını üstlenebilir. Ana yüklenici teklifinde arayüzleri, alt yüklenici performansını ve işverenin kabul testlerini yönetebilecek kapasite gerekir. İlanı açıp teknik referans, mali yeterlik ve teminat şartlarını teklif verecek tüzel kişi adına inceleyin."
+    ],
+    [
+      "Üretim yerinin alıcı için anlamı",
+      "Slovenya’daki gerçek üretimi alıcıya gösterebilmek marka güvenine katkı sağlayabilir. “Made in Slovenia” ülkeyi, “Made in EU” bölgeyi ifade eder. Birden fazla ülkede üretimde gümrük menşei için ürüne uygulanacak kural ve son esaslı işleme belirleyicidir. Şirket adresi, yeniden ambalajlama veya CE belgesi tek başına bu ifadeleri haklı çıkarmaz."
+    ],
+    [
+      "Tekliften tahsilata",
+      "Tedarikçiye peşin ödeme ile hakedişin kabulü arasındaki dönemi haftalara bölün. Bankadan işletme sermayesi için, sigortacıdan da alıcı limiti için yazılı teklif isteyin. Avans, teminat komisyonu, sigorta primi ve açıkta kalan alacak ayrı kalemlerdir. Şantiyeye girecek ekibin eğitim ve saha güvenliği giderini montaj bedeline ekleyin."
+    ],
+    [
+      "İlk projede karar ölçüsü",
+      "Aynı tonaj, teslim adresi ve garanti süresi için iki teklif hazırlayın. Slovenya modeli teslimi hızlandırıyor veya alıcının talep ettiği servisi sağlıyorsa bunun bedelini yazılı teklifte görün. Geciken bir hakedişin finansman gideriyle birlikte proje katkısını yeniden hesaplayın."
+    ]
+  ],
+  "sources": [
+    [
+      "Koper Limanı · Demir yolu bağlantıları",
+      "https://www.luka-kp.si/en/services-terminals/port-connections/railway-connections/"
+    ],
+    [
+      "Your Europe · Kamu ihalesinde teklif kuralları",
+      "https://europa.eu/youreurope/business/selling-in-eu/public-contracts/public-tendering-rules/index_en.htm"
+    ],
+    [
+      "Avrupa Komisyonu · Tercihli olmayan menşe",
+      "https://taxation-customs.ec.europa.eu/customs/rules-origin-goods/non-preferential-rules-origin_en"
+    ],
+    [
+      "SID Bank · İhracat alacaklarının sigortalanması",
+      "https://www.sid.si/en/insurance/export-and-pre-export-credit-insurance"
+    ],
+    [
+      "Slovenya SPOT · İşverenin iş güvenliği sorumlulukları",
+      "https://spot.gov.si/en/info/safety-at-work"
+    ]
+  ],
+  "related": "https://slovenia.investors.com.tr/#slovenya-sirketi",
+  "relatedLabel": "Slovenya masasındaki etkileşimli iş geliştirme rehberi"
+},
+ {
   "slug":"avrupada-buyume-ve-nakit-akisi","topic":"Finansman","image":"harbor",
   "title":"Avrupa’da büyürken nakit akışı neden belirleyici?",
   "summary":"Yeni siparişin finansman ihtiyacı, tedarikçiye ödeme ile müşteriden tahsilat arasındaki sürede ortaya çıkıyor.",
