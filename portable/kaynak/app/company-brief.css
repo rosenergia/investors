@@ -54,3 +54,29 @@
 
 .venture-outlook {grid-column:1/-1;border-top:1px solid #bbc9bf;padding-top:20px}
 .venture-outlook small {display:block;color:#52645a;margin-top:12px;font-size:13px}
+
+.offer-visual,.receivable-figure {background:#eff3ee;color:#16352b;margin:22px 0 0;padding:clamp(16px,2.4vw,32px)}
+.offer-visual h3,.receivable-figure figcaption {margin:0;font-size:clamp(21px,2.1vw,31px);font-weight:500;letter-spacing:-.035em}
+.offer-switch {display:flex;gap:4px;background:#e0e7de;padding:4px;width:fit-content;max-width:100%;border-radius:28px;margin:16px 0}
+.offer-switch button {border:0;border-radius:22px;min-height:44px;padding:8px 20px;background:transparent;color:#264333;font:inherit}
+.offer-switch button[aria-pressed=true] {background:#193d31;color:white}
+.offer-view {display:grid;grid-template-columns:minmax(115px,33%) 1fr;background:#fff}
+.offer-view img {width:100%;height:100%;min-height:145px;object-fit:cover}
+.offer-view>div {padding:18px}
+.offer-view h4 {font-size:22px;margin:0;line-height:1.2}
+.offer-view p,.receivable-figure p {font-size:15px;line-height:1.55;margin:10px 0 0}
+.offer-view .offer-scope {font-weight:600;color:#325e49}
+.receivable-bar {display:grid;grid-template-columns:3fr 5fr 2fr;margin:22px 0 16px}
+.receivable-bar span {padding:12px 0;text-align:center;background:#274e3c;color:white}
+.receivable-bar span:nth-child(2) {background:#92bda7;color:#112e20}
+.receivable-bar span:last-child {background:#e9ca8d;color:#342a19}
+.receivable-figure dl {display:flex;flex-wrap:wrap;gap:18px;margin:0}
+.receivable-figure dl>div {display:block;border:0;padding:0}
+.receivable-figure dd {font-size:20px;margin:3px 0}
+@media(max-width:650px){
+ .offer-view {grid-template-columns:1fr}
+ .offer-view img {height:104px;min-height:0}
+ .offer-switch button {padding-inline:13px}
+ .receivable-figure dl {display:grid;gap:5px}
+ .receivable-figure dl>div {display:flex;align-items:center;justify-content:space-between;gap:12px}
+}

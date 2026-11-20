@@ -155,6 +155,7 @@ publish('/genel-bakis/', 'Genel bakış', 'Ücretsiz ve açık erişimli finansm
     <p id="insight-count" role="status">{len(insights)} yazı</p><div class="insight-grid" id="insight-results">{insight_cards()}</div>
     <p id="insight-empty" hidden>Bu aramaya uygun yazı bulunamadı. Başka bir kelime deneyebilirsiniz.</p></section>''')
 for item in insights:
+    comparison = (ROOT / 'project-comparison.html').read_text() if item['slug'] == 'slovenya-merkezli-avrupa-projeleri' else ''
     content = ''.join(f'<section id="bolum-{index}"><h2>{escape(title)}</h2><p>{escape(text)}</p></section>' for index,(title,text) in enumerate(item['sections']))
     anchors = ''.join(f'<a href="#bolum-{index}">{escape(title)}</a>' for index,(title,_) in enumerate(item['sections']))
     sources = ''.join(f'<li><a href="{escape(url, quote=True)}" target="_blank" rel="noreferrer">{escape(label)} ↗</a></li>' for label,url in item['sources'])
@@ -162,7 +163,7 @@ for item in insights:
         f'''<section class="article-heading"><a href="/genel-bakis/">← Genel bakış</a><p class="eyebrow">{escape(item['topic'])}</p>
         <h1>{escape(item['title'])}</h1><p class="article-deck">{escape(item['summary'])}</p>
         <p class="article-meta">Hazırlayan investors.com.tr · <time datetime="{item.get('date', '2026-11-14')}">{item.get('dateLabel', '14 Kasım 2026')}</time> · Açık erişim</p></section>
-        <div class="article-layout section"><aside aria-label="Yazının bölümleri">{anchors}<a href="#kaynaklar">Kaynaklar</a></aside>
+        {comparison}<div class="article-layout section"><aside aria-label="Yazının bölümleri">{anchors}<a href="#kaynaklar">Kaynaklar</a></aside>
         <article class="article-copy">{content}<p class="editorial-note">Koşullara bağlı öngörü, investors.com.tr editoryal değerlendirmesidir. Kaynaklar aşağıda yer alır.</p>
         <section id="kaynaklar"><h2>Kaynaklar</h2><ul>{sources}</ul></section>
         <a class="line" href="{item['related']}">{escape(item['relatedLabel'])} →</a></article></div>''')

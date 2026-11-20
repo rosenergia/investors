@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { photograph } from "../lib/editorial";
 
+import { OfferComparison, ReceivableFigure } from "./project-visual";
+
 const chapters = [
 {
   "topic": "EPC",
@@ -318,6 +320,8 @@ export function CompanyBrief() {
             </div>
           </div>
         </div>
+        {chapter.topic === "EPC" && <OfferComparison />}
+        {chapter.topic === "Alacaklar" && <ReceivableFigure />}
         <div className="venture-reading" key={chapter.title}>
           <div><h3>Mevcut durum</h3><p>{chapter.body}</p></div>
           <aside><h3>İzlenecek göstergeler</h3><p>{chapter.action}</p></aside>
