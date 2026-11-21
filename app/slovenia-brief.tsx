@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { createElement, useState } from "react";
+import "../lib/neighbour-map";
 import { ArrowRight } from "lucide-react";
 import { photograph, sectorsInPrint } from "../lib/editorial";
 import { marketPilots } from "../lib/markets";
@@ -25,6 +26,7 @@ export function SloveniaBrief({ open }: { open: (id: string) => void }) {
       <a href="#sektor-brifingi" onClick={e=>{e.preventDefault();document.getElementById("sektor-brifingi")?.focus();}}>Sektör brifingini seç <ArrowRight size={18}/></a>
       <a href="#slovenya-sirketi">İhale, EPC, finansman ve üretim rehberi <ArrowRight size={18}/></a>
     </div><div className="si-hero-image"><img src={photograph("harbor")} alt="Konteyner sahası ve yükleme vinçlerine havadan bakış" /></div></div>
+    {createElement("neighbour-map")}
     <div className="si-reading page-gutter" id="sektor-brifingi" tabIndex={-1}>
       <div className="si-brief-bar"><h2>Sektör brifingi</h2><label>Sektör seçin <select value={id} onChange={e=>choose(e.target.value)}>{sectorsInPrint.map(s=><option key={s.id} value={s.id}>{s.name}</option>)}</select></label></div>
       <div className="si-brief-grid" aria-live="polite"><div><p className="si-label">{buyer}</p><h3>{question}</h3><p>{context}</p><button className="plain-link" onClick={()=>open(id)}>Ayrıntılı analizi oku <ArrowRight size={17}/></button></div>
